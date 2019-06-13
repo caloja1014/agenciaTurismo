@@ -375,7 +375,7 @@ is divided into following sections:
         </condition>
     </target>
     <target name="-init-test-properties">
-        <property name="test.binaryincludes" value="&lt;nothing&gt;"/>
+        <property name="test.binaryincludes"  value="&lt;nothing&gt;"/>
         <property name="test.binarytestincludes" value=""/>
         <property name="test.binaryexcludes" value=""/>
     </target>
