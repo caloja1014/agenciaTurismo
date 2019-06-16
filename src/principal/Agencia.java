@@ -20,4 +20,9 @@ public class Agencia {
     private ArrayList<Catalogo> catalogos;
     private ArrayList<Reserva> reservas;
     private ArrayList<Cliente> clientes;
+    
+    public void lecturaArchivo(){}
+    public Reserva getReserva(Date fecha){}
+    
+    
 }
