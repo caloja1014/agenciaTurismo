@@ -29,7 +29,7 @@ public class Ciudad {
     }
 
     /**
-     * @return the nombre
+     * @return the nombreq
      */
     public String getNombre() {
         return nombre;
