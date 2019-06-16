@@ -48,7 +48,7 @@ public class Reserva {
              } 
     
     //metodo
-        public Boolean verificarAgencia(String){
+        public boolean verificarCliente(String identificacion){
             return true;
         }
         
