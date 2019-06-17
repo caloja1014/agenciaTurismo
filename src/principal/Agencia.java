@@ -23,7 +23,8 @@ public class Agencia {
     private ArrayList<Cliente> clientes;
     
     public void lecturaArchivo(){}
-    public Reserva getReserva(Date fecha){}
+    public Reserva getReserva(Date fecha){return null;
+}
     
     
 }
