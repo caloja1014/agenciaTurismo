@@ -29,8 +29,6 @@ public class ProcesamientoData {
         while(lectura!=null){
             lectura=entrada.readLine();
             listaElementos.add(lectura);
-
-            
         }
         entrada.close();
         } catch (IOException ex) {
@@ -40,7 +38,6 @@ public class ProcesamientoData {
     }
     
     public static  ArrayList<Catalogo> crearListaCatalogos(ArrayList<String> lista ){
-        
         ArrayList<Catalogo> listaObjeto=new ArrayList();
         try{
             for (String catalogo:lista){
@@ -55,7 +52,6 @@ public class ProcesamientoData {
     
         
     public static ArrayList<Ciudad> crearListaCiudades(ArrayList<String> lista ){
-
         ArrayList<Ciudad> listaObjeto=new ArrayList();
         try{
                for (String ciudad:lista){
@@ -68,9 +64,7 @@ public class ProcesamientoData {
     }
 
 public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lista ){
-
-        ArrayList<Habitacion> listaObjeto=new ArrayList();
-        
+        ArrayList<Habitacion> listaObjeto=new ArrayList();        
         try{
             for (String habitacion:lista){
                 String[] hab=habitacion.split("\\|");
@@ -79,10 +73,9 @@ public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lis
         }catch (NullPointerException  ex){}
             return listaObjeto;
     }
-    public static ArrayList<Hotel> crearListaHoteles(ArrayList<String> lista ){
 
+    public static ArrayList<Hotel> crearListaHoteles(ArrayList<String> lista ){
         ArrayList<Hotel> listaObjeto=new ArrayList();
-        
         try{
             for (String hotel:lista){
                 String[] ho=hotel.split("\\|");
@@ -93,8 +86,26 @@ public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lis
 
     }
 
-
-
-
-
+    public static ArrayList<Provincia> crearListaProvincias(ArrayList<String> lista ){
+        ArrayList<Provincia> listaObjeto=new ArrayList();
+        try{
+        for (String provincia:lista){
+            String[] prov=provincia.split("\\|");
+            listaObjeto.add(new Provincia(prov[0],prov[1],prov[2],prov[3],prov[4]));
+        }
+        }catch(NullPointerException  ex){}
+                return listaObjeto;
+    }
+    
+    
+    public static ArrayList<Servicio> crearListaServicios(ArrayList<String> lista ){
+        ArrayList<Servicio> listaObjeto=new ArrayList();
+        try{
+        for (String servicio:lista){
+            String[] ser=servicio.split("\\|");
+            listaObjeto.add(new Servicio(ser[0],ser[1],ser[2],Boolean.parseBoolean(ser[3])));
+        }
+        }catch (NullPointerException  ex){}
+        return listaObjeto;
+    }
 }
