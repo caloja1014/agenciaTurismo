@@ -9,6 +9,7 @@ import data.Data;
 import principal.*;
 import java.text.ParseException;
 import java.util.Scanner;
+import java.util.logging.Logger;
 import principal.Ciudad;
 import principal.Hotel;
 import principal.Reserva;
@@ -18,8 +19,15 @@ import principal.Reserva;
  * @author Freddy
  */
 public class MenuAgencia {
-    Data dt=new Data();
+    
+   
     Scanner sc=new Scanner(System.in);
+    Reserva rv=new Reserva();
+    public MenuAgencia() throws ParseException {
+        presentarMenuAgencia();
+    }
+    
+    
     public void presentarMenuAgencia() throws ParseException{
         System.out.println("Menu agenecia: \n1.- Consultar Reservas \n2.- Salir");
         String opcion=sc.nextLine();
@@ -38,18 +46,18 @@ public class MenuAgencia {
         System.out.println("Ingrese la ciudad que desea consultar o \"T\" si desea ingresar todas las ciudades ");
         String opcion=sc.nextLine();
         float monto=0;
-        for(Reserva rs:dt.reservas){
+        for(Reserva rs:Agencia.reservas){
             int fechaReserConvert=convertirFecha(rs.getFechaCheckIn());
             if(opcion.equalsIgnoreCase("T")){
                 if(fechaReserConvert>=fechaIni && fechaReserConvert<=fechaOut){
-                    monto+=rs.getMontoRecaudado();
+                    monto+=rv.rs.getMontoRecaudado();
                 }
             }
             else{
-                for(Ciudad c:ciudades){
-                    for(Hotel h:hoteles){
+                for(Ciudad c:Data.ciudades){
+                    for(Hotel h:Data.hoteles){
                         if(fechaReserConvert>=fechaIni && fechaReserConvert<=fechaOut && rs.getHotel().equals(h) && h.getIdCiudad().equals(opcion)){
-                            monto+=rs.getMontoRecaudado();
+                            monto+=rv.rs.getMontoRecaudado();
                         }   
                     }
                 }

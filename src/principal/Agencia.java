@@ -1,5 +1,6 @@
 package principal;
 
+import Menu.MenuAgencia;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,7 +16,15 @@ import java.util.Scanner;
  * @author gabrielapazmino
  */
 public class Agencia {
+    
+    public static ArrayList<Reserva> reservas;
+
     Scanner sc=new Scanner(System.in);
+    
+    public Agencia() throws ParseException {
+        presentarMenu();
+    }
+        
     public void presentarMenu() throws ParseException{
         System.out.println("Buenas dias, que cargo tiene usted?(Cliente o agencia)");
         String ocupacion=sc.nextLine();
@@ -24,15 +33,13 @@ public class Agencia {
                 
                 break;
             case "agencia":
-                presentarMenuAgencia();
+                MenuAgencia ma=new MenuAgencia();
                 break;
         }  
         
     
     }
 
-    public Agencia() {
-        presentarMenu();
-    }
+
             
-    }
+}

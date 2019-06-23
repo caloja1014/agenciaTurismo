@@ -25,6 +25,11 @@ public class Reserva {
         this.hotel = hotel;
         this.cliente = cliente;
     }
+
+    public Reserva() {
+    }
+    
+    
     
     
     //metodo
