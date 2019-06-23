@@ -16,6 +16,14 @@ public class Provincia {
     private String region;
     private String webProv;
 
+    public Provincia(String idProvincia, String nombre, String descripcionProvincia, String region, String webProv) {
+        this.idProvincia = idProvincia;
+        this.nombre = nombre;
+        this.descripcionProvincia = descripcionProvincia;
+        this.region = region;
+        this.webProv = webProv;
+    }
+
     /**
      * @return the idProvincia
      */

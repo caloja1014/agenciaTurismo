@@ -14,6 +14,12 @@ public class Ciudad {
     private String idProvincia;
     private String nombre;
 
+    public Ciudad(String idCiudad, String idProvincia, String nombre) {
+        this.idCiudad = idCiudad;
+        this.idProvincia = idProvincia;
+        this.nombre = nombre;
+    }
+
     /**
      * @return the idCiudad
      */

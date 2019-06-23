@@ -17,6 +17,15 @@ public class Habitacion {
     private double tarifaDoble;
     private double tarifaTriple;
 
+    public Habitacion(String idHabitacion, String idHotel, String nombre, double tarifaSencilla, double tarifaDoble, double tarifaTriple) {
+        this.idHabitacion = idHabitacion;
+        this.idHotel = idHotel;
+        this.nombre = nombre;
+        this.tarifaSencilla = tarifaSencilla;
+        this.tarifaDoble = tarifaDoble;
+        this.tarifaTriple = tarifaTriple;
+    }
+
     /**
      * @return the idHabitacion
      */
