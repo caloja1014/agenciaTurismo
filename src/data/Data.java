@@ -34,8 +34,4 @@ public class Data {
     private ArrayList<Habitacion> habitaciones=ProcesamientoData.crearListaHabitaciones(Data.archivoHabitaciones);
     private ArrayList<Catalogo> catalogos=ProcesamientoData.crearListaCatalogos(Data.archivoCatalogo);
     private ArrayList<Servicio> servicios=ProcesamientoData.crearListaServicios(Data.archivoServicios);
-    
-    private ArrayList<Reserva> reservas;
-    private ArrayList<Cliente> clientes;
-
 }
