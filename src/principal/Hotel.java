@@ -23,80 +23,125 @@ public class Hotel {
     private String latitud;
     private String longitud;
     
-        //setters
-        public void setidHotel(String idHotel){
-            this.idHotel=idHotel;
-            }
-        public void setidCiudad(String idCiudad){
-            this.idCiudad=idCiudad;
-            }
-        public void setnombre(String nombre){
-            this.nombre=nombre;
-            }
-        public void setdescipcionHotel(String descipcionHotel){
-            this.descipcionHotel=descipcionHotel;
-            }
-        public void settargetaHotel(String targetaHotel){
-            this.targetaHotel=targetaHotel;
-            }
-        public void setubicacion(String ubicacion){
-            this.ubicacion=ubicacion;
-            }
-        public void setdireccion(String direccion){
-            this.direccion=direccion;
-            }
-        public void setwebHotel(String webHotel){
-            this.webHotel=webHotel;
-            }
-        public void setclasificacion(String clasificacion){
-            this.clasificacion=clasificacion;
-            }
-        public void setfoto(String foto){
-            this.foto=foto;
-            }
-        public void setlatitud(String latitud){
-            this.latitud=latitud;
-            }
-        public void setlongitud(String longitud){
-            this.longitud=longitud;
-            }
+        //constructor
 
+    public Hotel(String idHotel, String idCiudad, String nombre, String descipcionHotel, String targetaHotel, String ubicacion, String direccion, String webHotel, String clasificacion, String foto, String latitud, String longitud) {
+        this.idHotel = idHotel;
+        this.idCiudad = idCiudad;
+        this.nombre = nombre;
+        this.descipcionHotel = descipcionHotel;
+        this.targetaHotel = targetaHotel;
+        this.ubicacion = ubicacion;
+        this.direccion = direccion;
+        this.webHotel = webHotel;
+        this.clasificacion = clasificacion;
+        this.foto = foto;
+        this.latitud = latitud;
+        this.longitud = longitud;
+    }
+    
+    
+        
         //getters
-        public String idHotel(){
-            return idHotel;
-             }        
-        public String idCiudad(){
-            return idCiudad;
-         } 
-        public String nombre(){
-            return nombre;
-            }        
-        public String descipcionHotel(){
-            return descipcionHotel;
-            } 
-        public String targetaHotel(){
-            return targetaHotel;
-            }        
-        public String ubicacionl(){
-            return ubicacion;
-            }
-        public String direccion(){
-            return direccion;
-             }        
-        public String webHotel(){
-            return webHotel;
-         } 
-        public String clasificacion(){
-            return clasificacion;
-            }        
-        public String foto(){
-            return foto;
-            } 
-        public String latitud(){
-            return latitud;
-            }        
-        public String longitud(){
-            return longitud;
-            }     
-          
+
+    public String getIdHotel() {
+        return idHotel;
+    }
+
+    public String getIdCiudad() {
+        return idCiudad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDescipcionHotel() {
+        return descipcionHotel;
+    }
+
+    public String getTargetaHotel() {
+        return targetaHotel;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getWebHotel() {
+        return webHotel;
+    }
+
+    public String getClasificacion() {
+        return clasificacion;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+        
+    //setters
+
+    public void setIdHotel(String idHotel) {
+        this.idHotel = idHotel;
+    }
+
+    public void setIdCiudad(String idCiudad) {
+        this.idCiudad = idCiudad;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDescipcionHotel(String descipcionHotel) {
+        this.descipcionHotel = descipcionHotel;
+    }
+
+    public void setTargetaHotel(String targetaHotel) {
+        this.targetaHotel = targetaHotel;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setWebHotel(String webHotel) {
+        this.webHotel = webHotel;
+    }
+
+    public void setClasificacion(String clasificacion) {
+        this.clasificacion = clasificacion;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+    
+    
+    
 }

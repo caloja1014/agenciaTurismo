@@ -5,6 +5,7 @@
  */
 package principal;
 
+import java.util.ArrayList;
 /**
  *
  * @author Cloja
@@ -14,4 +15,4 @@ public class Principal {
     public static void main(String[] args){
     
     }
-}
+}    

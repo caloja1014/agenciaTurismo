@@ -13,20 +13,26 @@ public class Catalogo {
     private String idServicio;
     private String nombre;
     
-    //setters
-        public void idServicio(String idServicio){
-            this.idServicio=idServicio;
-            }
-        public void nombre(String nombre){
-            this.nombre=nombre;
-            }
-        
+
     //getters
-        public String idServicio(){
-            return idServicio;
-             }        
-        public String nombre(){
-            return nombre;
-         } 
-               
+
+    public String getIdServicio() {
+        return idServicio;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
+    //setters
+
+    public void setIdServicio(String idServicio) {
+        this.idServicio = idServicio;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
 }
