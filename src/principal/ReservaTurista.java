@@ -12,8 +12,8 @@ package principal;
 public class ReservaTurista extends Reserva{
     private Habitacion habitacion;
 
-    public ReservaTurista(Habitacion habitacion, String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente) {
-        super(fechaCheckIn, fechaCheckOut, hotel, cliente);
+    public ReservaTurista(Habitacion habitacion, String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente,int montorecaudado) {
+        super(fechaCheckIn, fechaCheckOut, hotel, cliente, montoRecaudado);
         this.habitacion = habitacion;
     }
 

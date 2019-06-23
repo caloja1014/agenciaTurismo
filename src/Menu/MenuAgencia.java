@@ -50,14 +50,14 @@ public class MenuAgencia {
             int fechaReserConvert=convertirFecha(rs.getFechaCheckIn());
             if(opcion.equalsIgnoreCase("T")){
                 if(fechaReserConvert>=fechaIni && fechaReserConvert<=fechaOut){
-                    monto+=rv.rs.getMontoRecaudado();
+                    monto+=rs.getMontoRecaudado();
                 }
             }
             else{
                 for(Ciudad c:Data.ciudades){
                     for(Hotel h:Data.hoteles){
                         if(fechaReserConvert>=fechaIni && fechaReserConvert<=fechaOut && rs.getHotel().equals(h) && h.getIdCiudad().equals(opcion)){
-                            monto+=rv.rs.getMontoRecaudado();
+                            monto+=rs.getMontoRecaudado();
                         }   
                     }
                 }

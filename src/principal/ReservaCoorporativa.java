@@ -15,8 +15,8 @@ public class ReservaCoorporativa extends Reserva{
     private ArrayList<Habitacion> habitacionesEmpleados;
     private ArrayList<String> ocupantes;
 
-    public ReservaCoorporativa(ArrayList<Habitacion> habitacionesEmpleados, ArrayList<String> ocupantes, String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente) {
-        super(fechaCheckIn, fechaCheckOut, hotel, cliente);
+    public ReservaCoorporativa(ArrayList<Habitacion> habitacionesEmpleados, ArrayList<String> ocupantes, String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente, int montoRecaudado) {
+        super(fechaCheckIn, fechaCheckOut, hotel, cliente, montoRecaudado);
         this.habitacionesEmpleados = habitacionesEmpleados;
         this.ocupantes = ocupantes;
     }

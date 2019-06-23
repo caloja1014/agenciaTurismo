@@ -16,14 +16,16 @@ public class Reserva {
     private String fechaCheckOut;
     private Hotel hotel;
     private Cliente cliente;
-
+    private int montoRecaudado;
     //constructor 
 
-    public Reserva(String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente) {
+    public Reserva(String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente, int montoRecaudado) {
         this.fechaCheckIn = fechaCheckIn;
         this.fechaCheckOut = fechaCheckOut;
         this.hotel = hotel;
         this.cliente = cliente;
+        this.montoRecaudado=montoRecaudado;
+                
     }
 
     public Reserva() {
@@ -55,6 +57,11 @@ public class Reserva {
     public Cliente getCliente() {
         return cliente;
     }
+
+    public int getMontoRecaudado() {
+        return montoRecaudado;
+    }
+    
 
     //setters
     public void setFechaCheckIn(String fechaCheckIn) {
