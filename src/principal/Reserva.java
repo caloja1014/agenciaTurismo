@@ -12,14 +12,14 @@ import java.util.Date;
  * @author gabrielapazmino
  */
 public class Reserva {
-    private Date fechaCheckIn;
+    private String fechaCheckIn;
     private String fechaCheckOut;
     private Hotel hotel;
     private Cliente cliente;
 
     //constructor 
 
-    public Reserva(Date fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente) {
+    public Reserva(String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente) {
         this.fechaCheckIn = fechaCheckIn;
         this.fechaCheckOut = fechaCheckOut;
         this.hotel = hotel;
@@ -35,7 +35,7 @@ public class Reserva {
     
     //getters
     
-    public Date getFechaCheckIn() {
+    public String getFechaCheckIn() {
         return fechaCheckIn;
     }
 
@@ -52,7 +52,7 @@ public class Reserva {
     }
 
     //setters
-    public void setFechaCheckIn(Date fechaCheckIn) {
+    public void setFechaCheckIn(String fechaCheckIn) {
         this.fechaCheckIn = fechaCheckIn;
     }
 

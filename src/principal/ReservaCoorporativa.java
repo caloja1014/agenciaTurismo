@@ -14,6 +14,11 @@ import java.util.ArrayList;
 public class ReservaCoorporativa extends Reserva{
     private ArrayList<Habitacion> habitacionesEmpleados;
     private ArrayList<String> ocupantes;
-    
+
+    public ReservaCoorporativa(ArrayList<Habitacion> habitacionesEmpleados, ArrayList<String> ocupantes, String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente) {
+        super(fechaCheckIn, fechaCheckOut, hotel, cliente);
+        this.habitacionesEmpleados = habitacionesEmpleados;
+        this.ocupantes = ocupantes;
+    }
     
 }
