@@ -13,6 +13,17 @@ import java.util.Date;
  * @author gabrielapazmino
  */
 public class Agencia {
-    
+    public void presentarMenu() throws ParseException{
+        System.out.println("Buenas dias, que cargo tiene usted?(Cliente o agencia)");
+        String ocupacion=sc.nextLine();
+        switch(ocupacion){
+            case "Cliente":
+                
+                break;
+            case "agencia":
+                presentarMenuAgencia();
+                break;
+        }   
+    }
             
     }

@@ -11,4 +11,11 @@ package Menu;
  */
 public class MenuAgencia {
     
+        public void presentarMenuAgencia() throws ParseException{
+        System.out.println("Menu agenecia: \n1.- Consultar Reservas \n2.- Salir");
+        String opcion=sc.nextLine();
+        if(opcion.equalsIgnoreCase("1")){
+            consultarReserva();
+        }
+    }
 }
