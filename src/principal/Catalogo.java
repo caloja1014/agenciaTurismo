@@ -13,6 +13,14 @@ public class Catalogo {
     private String idServicio;
     private String nombre;
     
+        //constructor
+
+    public Catalogo(String idServicio, String nombre) {
+        this.idServicio = idServicio;
+        this.nombre = nombre;
+    }
+    
+  
 
     //getters
 
