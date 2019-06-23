@@ -5,6 +5,8 @@
  */
 package Menu;
 
+import java.text.ParseException;
+
 /**
  *
  * @author Freddy
@@ -17,5 +19,13 @@ public class MenuAgencia {
         if(opcion.equalsIgnoreCase("1")){
             consultarReserva();
         }
+    }
+            public int convertirFecha(String fecha){
+        String[] fechaSeparada=fecha.split("-");
+        String fechaParaConvertir="";
+        for(String s:fechaSeparada){
+            fechaParaConvertir+=s;
+        }
+        return Integer.parseInt(fechaParaConvertir);
     }
 }

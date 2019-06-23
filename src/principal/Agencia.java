@@ -1,5 +1,6 @@
 package principal;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 /*
@@ -23,7 +24,13 @@ public class Agencia {
             case "agencia":
                 presentarMenuAgencia();
                 break;
-        }   
+        }  
+        
+    
+    }
+
+    public Agencia() {
+        presentarMenu();
     }
             
     }
