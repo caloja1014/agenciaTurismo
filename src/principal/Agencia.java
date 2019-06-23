@@ -13,16 +13,6 @@ import java.util.Date;
  * @author gabrielapazmino
  */
 public class Agencia {
-    private ArrayList<Provincia> provincia;
-    private ArrayList<Ciudad> ciudades;
-    private ArrayList<Hotel> hoteles;
-    private ArrayList<Habitacion> habitaciones;
-    private ArrayList<Catalogo> catalogos;
-    private ArrayList<Reserva> reservas;
-    private ArrayList<Cliente> clientes;
     
-    public void lecturaArchivo(){}
-    public Reserva getReserva(Date fecha){return null;
-    }
             
     }
