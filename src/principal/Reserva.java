@@ -16,40 +16,60 @@ public class Reserva {
     private String fechaCheckOut;
     private Hotel hotel;
     private Cliente cliente;
+
+    //constructor 
+
+    public Reserva(Date fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente) {
+        this.fechaCheckIn = fechaCheckIn;
+        this.fechaCheckOut = fechaCheckOut;
+        this.hotel = hotel;
+        this.cliente = cliente;
+    }
     
-    
-    //setters
-        public void fechaCheckIn(Date fechaCheckIn){
-            this.fechaCheckIn=fechaCheckIn;
-            }
-        public void fechaCheckOut(String fechaCheckOut){
-            this.fechaCheckOut=fechaCheckOut;
-            }
-        public void hotel(Hotel hotel){
-            this.hotel=hotel;
-            }
-        public void cliente(Cliente cliente){
-            this.cliente=cliente;
-            
-        }
-    
-    //getters
-        public Date fechaCheckIn(){
-            return fechaCheckIn;
-             }        
-        public String fechaCheckOut(){
-            return fechaCheckOut;
-         } 
-        public Hotel hotel(){
-            return hotel;
-             }        
-        public Cliente cliente(){
-            return cliente;
-             } 
     
     //metodo
         public boolean verificarCliente(String identificacion){
             return true;
         }
+     
+    
+    //getters
+    
+    public Date getFechaCheckIn() {
+        return fechaCheckIn;
+    }
+
+    public String getFechaCheckOut() {
+        return fechaCheckOut;
+    }
+
+    public Hotel getHotel() {
+        return hotel;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    //setters
+    public void setFechaCheckIn(Date fechaCheckIn) {
+        this.fechaCheckIn = fechaCheckIn;
+    }
+
+    public void setFechaCheckOut(String fechaCheckOut) {
+        this.fechaCheckOut = fechaCheckOut;
+    }
+
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+
+    
+
         
 }
