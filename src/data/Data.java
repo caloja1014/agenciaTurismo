@@ -28,10 +28,10 @@ public class Data {
     public static ArrayList<String> archivoProvincias=ProcesamientoData.lecturaArchivo("C:\\Users\\Cloja\\Documents\\NetBeansProjects\\Proyecto\\src\\bdatos\\provincias.csv");
     public static ArrayList<String> archivoServicios=ProcesamientoData.lecturaArchivo("C:\\Users\\Cloja\\Documents\\NetBeansProjects\\Proyecto\\src\\bdatos\\servicios.csv");
 
-    private ArrayList<Provincia> provincia=ProcesamientoData.crearListaProvincias(Data.archivoProvincias);
-    private ArrayList<Ciudad> ciudades=ProcesamientoData.crearListaCiudades(Data.archivoCiudades);
-    private ArrayList<Hotel> hoteles=ProcesamientoData.crearListaHoteles(Data.archivoHoteles);
-    private ArrayList<Habitacion> habitaciones=ProcesamientoData.crearListaHabitaciones(Data.archivoHabitaciones);
-    private ArrayList<Catalogo> catalogos=ProcesamientoData.crearListaCatalogos(Data.archivoCatalogo);
-    private ArrayList<Servicio> servicios=ProcesamientoData.crearListaServicios(Data.archivoServicios);
+    static ArrayList<Provincia> provincias=ProcesamientoData.crearListaProvincias(Data.archivoProvincias);
+    static ArrayList<Ciudad> ciudades=ProcesamientoData.crearListaCiudades(Data.archivoCiudades);
+    static ArrayList<Hotel> hoteles=ProcesamientoData.crearListaHoteles(Data.archivoHoteles);
+    static ArrayList<Habitacion> habitaciones=ProcesamientoData.crearListaHabitaciones(Data.archivoHabitaciones);
+    static ArrayList<Catalogo> catalogos=ProcesamientoData.crearListaCatalogos(Data.archivoCatalogo);
+    static ArrayList<Servicio> servicios=ProcesamientoData.crearListaServicios(Data.archivoServicios);
 }
