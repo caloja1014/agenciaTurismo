@@ -66,4 +66,35 @@ public class ProcesamientoData {
         }
                return listaObjeto;
     }
+
+public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lista ){
+
+        ArrayList<Habitacion> listaObjeto=new ArrayList();
+        
+        try{
+            for (String habitacion:lista){
+                String[] hab=habitacion.split("\\|");
+                listaObjeto.add(new Habitacion(hab[0],hab[1],hab[2],Double.parseDouble(hab[3]),Double.parseDouble(hab[4]),Double.parseDouble(hab[5])));
+            }
+        }catch (NullPointerException  ex){}
+            return listaObjeto;
+    }
+    public static ArrayList<Hotel> crearListaHoteles(ArrayList<String> lista ){
+
+        ArrayList<Hotel> listaObjeto=new ArrayList();
+        
+        try{
+            for (String hotel:lista){
+                String[] ho=hotel.split("\\|");
+                listaObjeto.add(new Hotel(ho[0],ho[1],ho[2],ho[3],ho[4],ho[5],ho[6],ho[7],ho[8],ho[9],ho[10],ho[11]));
+            }
+        }catch(NullPointerException  ex){}
+        return listaObjeto;
+
+    }
+
+
+
+
+
 }
