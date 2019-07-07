@@ -17,7 +17,7 @@ import java.util.Scanner;
  */
 public class Agencia {
     
-    public static ArrayList<Reserva> reservas;
+    public static ArrayList<Reserva> reservas=new ArrayList<>();
 
     Scanner sc=new Scanner(System.in);
     
