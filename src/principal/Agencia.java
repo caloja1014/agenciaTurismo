@@ -35,7 +35,6 @@ public void presentarMenu() throws ParseException{
         String ocupacion=sc.nextLine();
         boolean client=Pattern.matches(".*agencia.*", ocupacion);
         boolean agent=Pattern.matches(".*cliente.*", ocupacion);
-        
         if (client){
             MenuCliente mc=new MenuCliente();
         }else if(agent){
