@@ -97,6 +97,7 @@ public class MenuCliente {
     }
     
     public void realizarReserva(String usuario1){
+        System.out.println("hola");
         Ciudad c1=validarPorCiudad(usuario1);
         if(c1!=null){
             System.out.println("Desea solicitar un rango de precio?");
@@ -107,7 +108,7 @@ public class MenuCliente {
                 System.out.println("Digame el valor final de su intervalo por favor");
                 String rangoFin=sc.nextLine();
                 String rango=rangoIn+" a "+rangoFin;
-                mostrarInformacion(c1, rango, Data.habitaciones, Data.ciudades);
+                mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, Data.ciudades);
                 System.out.println("Desea algun servicio en especifico?");
                 String rsp=sc.nextLine();
                 if(Pattern.matches(".*SI.*",rsp.toUpperCase())){
@@ -208,72 +209,5 @@ public class MenuCliente {
         }
     }
 
-    public void presetarInterfazCliente(){
-        listaValsino.add("si");
-        listaValsino.add("no");
-        System.out.println("Hola! Soy Buzz tu agente asignado! En que puedo ayudarte?");
-        String usuario1=sc.nextLine();
-        boolean reservacion= Pattern.matches(".*reservacion.*|.*reserva.*|.*reservar.*",usuario1); 
-        boolean eliminacion= Pattern.matches(".*cancelar.*|.*eliminar.*|.*cancelacion.*|.*anular.*|.*eliminacion.*|.*anulacion.*",usuario1); 
-        boolean consultar= Pattern.matches(".*informacion.*&&.*eliminar.*|.*informacion.*&&.*anular.*",usuario1);
-        
-        boolean opcion=true;
-        while (opcion){
-        
-            if(reservacion){    
-                realizarReserva(usuario1);
-                System.out.println("Desea realizar otra accion?");
-                String validacion=sc.nextLine();
-                while (!listaValsino.contains(validacion)){
-                    System.out.println("Dato incorrecto, ingrese si o no");
-                }
-                if (validacion.equalsIgnoreCase("si")){
-                    opcion=true;
-                }else if(validacion.equalsIgnoreCase("no")){
-                    opcion=false;
-                }
-            }
-            else if(eliminacion){
-                eliminarReserva();
-                System.out.println("Desea realizar otra accion?");
-                String validacion=sc.nextLine();
-                while (!listaValsino.contains(validacion)){
-                    System.out.println("Dato incorrecto, ingrese si o no");
-                }
-                if (validacion.equalsIgnoreCase("si")){
-                    opcion=true;
-                }else if(validacion.equalsIgnoreCase("no")){
-                    opcion=false;
-                }
-            }
-            else if(consultar){
-                mostrarInfromacion();   
-                System.out.println("Desea realizar otra accion?");
-                String validacion=sc.nextLine();
-                while (!listaValsino.contains(validacion)){
-                    System.out.println("Dato incorrecto, ingrese si o no");
-                }
-                if (validacion.equalsIgnoreCase("si")){
-                    opcion=true;
-                }else if(validacion.equalsIgnoreCase("no")){
-                    opcion=false;
-                }
-            }
-            else{
-                realizarNada();   
-                System.out.println("Desea realizar otra accion?");
-                String validacion=sc.nextLine();
-                while (!listaValsino.contains(validacion)){
-                    System.out.println("Dato incorrecto, ingrese si o no");
-                }
-                if (validacion.equalsIgnoreCase("si")){
-                    opcion=true;
-                }else if(validacion.equalsIgnoreCase("no")){
-                    opcion=false;
-                }
-            }
-        }
-            System.out.println("Gracias por preferirnos!!");
-    Scanner sc=new Scanner(System.in);
-    }
+   
 }
