@@ -109,33 +109,20 @@ public class MenuCliente {
     }
     
     public void realizarReserva(String usuario1){
-        System.out.println("hola");
+        
         Ciudad c1=validarPorCiudad(usuario1);
         if(c1!=null){
-            System.out.println("Desea solicitar un rango de precio?");
-            String respu=sc.nextLine();
-            if(Pattern.matches(".*SI.*",respu.toUpperCase())){
-                System.out.println("Digame el valor inicial de su intervalo porfavor");
-                String rangoIn=sc.nextLine();
-                System.out.println("Digame el valor final de su intervalo porfavor");
-                String rangoFin=sc.nextLine();
-                String rango=rangoIn+" a "+rangoFin;
-                mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, Data.ciudades);
-                System.out.println("Desea algun servicio en especifico?");
-                String rsp=sc.nextLine();
-                if(Pattern.matches(".*SI.*",rsp.toUpperCase())){
-                    System.out.println("Indique el servicio que desea");
-                }
-                else{
-                    System.out.println("Indiqueme que lugar desea reservar");
-                    String opcion=sc.nextLine();
-                }
-            }
-            else{
-                //mostrarInformacion(c1);
-                System.out.println("Indiqueme que lugar desea reservar");
+            reservaPorCiudad(c1);
+        }else{
+            System.out.println("Indiqueme una ciudad de preferencia");
+            String ciud=sc.nextLine();
+            Ciudad c2=validarPorCiudad(ciud);
+            if(c2!=null){
+                reservaPorCiudad(c2);
             }
         }
+        
+       
     }
     
     public Ciudad validarPorCiudad(String usuario1){
