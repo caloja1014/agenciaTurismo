@@ -29,12 +29,22 @@ public class MenuAgencia {
     
     
     public void presentarMenuAgencia() throws ParseException{
+        boolean val=true;
+        
+        while (val){
         System.out.println("Menu agenecia: \n1.- Consultar Reservas \n2.- Salir");
         String opcion=sc.nextLine();
+        
         if(opcion.equalsIgnoreCase("1")){
             consultarReserva();
+        }else if(opcion.equalsIgnoreCase("2")){
+            val=false;
+        }else{
+            System.out.println("No entiendo ingrese una opcion valida");
+            
         }
-    }
+            System.out.println("Gracias por preferirnos");
+    }}
         
     public void consultarReserva() throws ParseException{
         System.out.println("Ingrese fecha de inicio(formato yyyy-MM-dd): ");
