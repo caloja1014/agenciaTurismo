@@ -1,10 +1,12 @@
 package principal;
 
 import Menu.MenuAgencia;
+import Menu.MenuCliente;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -26,21 +28,22 @@ public class Agencia {
         presentarMenu();
     }
         
-    public void presentarMenu() throws ParseException{
+public void presentarMenu() throws ParseException{
+        
+        
         System.out.println("Buenas dias, que cargo tiene usted?(Cliente o agencia)");
         String ocupacion=sc.nextLine();
-        switch(ocupacion){
-            case "Cliente":
-                
-                break;
-            case "agencia":
-                MenuAgencia ma=new MenuAgencia();
-                break;
+        boolean client=Pattern.matches(".*agencia.*", ocupacion);
+        boolean agent=Pattern.matches(".*cliente.*", ocupacion);
+        
+        if (client){
+            MenuCliente mc=new MenuCliente();
+        }else if(agent){
+            MenuAgencia ma=new MenuAgencia();    
         }  
         
     
     }
-
 
             
 }
