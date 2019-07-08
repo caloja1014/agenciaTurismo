@@ -77,7 +77,7 @@ public class MenuCliente {
                 String ciu=sc.nextLine();
                 String cod=sc.nextLine();
                 String serv=sc.nextLine();
-                mostrarInformacion(String ciu, String cod, ArrayList<Habitacion> habitacionesL, ArrayList<Ciudad> ciudadesL);  
+                mostrarInformacion( ciu,  cod, data.Data.habitaciones,serv, data.Data.ciudades);  
                 System.out.println("Desea realizar otra accion?");
                 String validacion=sc.nextLine();
                 while (!listaValsino.contains(validacion)){
