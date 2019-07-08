@@ -5,14 +5,15 @@
  */
 package principal;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 /**
  *
  * @author Cloja
  */
 public class Principal {
-    private Agencia agencia;
-    public static void main(String[] args){
-    
+
+    public static void main(String[] args) throws ParseException{
+        Agencia agen=new Agencia();
     }
 }    

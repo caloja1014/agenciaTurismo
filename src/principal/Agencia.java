@@ -28,9 +28,7 @@ public class Agencia {
         presentarMenu();
     }
         
-public void presentarMenu() throws ParseException{
-        
-        
+public void presentarMenu() throws ParseException{     
         System.out.println("Buenas dias, que cargo tiene usted?(Cliente o agencia)");
         String ocupacion=sc.nextLine();
         boolean client=Pattern.matches(".*agencia.*", ocupacion);
