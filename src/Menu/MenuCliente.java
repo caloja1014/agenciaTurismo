@@ -24,6 +24,8 @@ public class MenuCliente {
     private static final ArrayList <String> listaValsino=new ArrayList();
     private static final ArrayList <String> listaCod=new ArrayList();
     static Scanner sc =new Scanner(System.in);
+    ArrayList<Habitacion> habitacionesL;
+    ArrayList<Ciudad> ciudadesL;
     
     public MenuCliente(){
         presentarInterfazCliente();
@@ -66,7 +68,13 @@ public class MenuCliente {
                 }
             }
             else if(consultar){
-                mostrarInformacion();   
+                
+                String ciu=sc.nextLine();
+                String cod=sc.nextLine();
+                String serv=sc.nextLine();
+
+                mostrarInformacion(String ciu, String cod, ArrayList<Habitacion> habitacionesL, ArrayList<Ciudad> ciudadesL);  
+                
                 System.out.println("Desea realizar otra accion?");
                 String validacion=sc.nextLine();
                 while (!listaValsino.contains(validacion)){
@@ -103,9 +111,9 @@ public class MenuCliente {
             System.out.println("Desea solicitar un rango de precio?");
             String respu=sc.nextLine();
             if(Pattern.matches(".*SI.*",respu.toUpperCase())){
-                System.out.println("Digame el valor inicial de su intervalo");
+                System.out.println("Digame el valor inicial de su intervalo porfavor");
                 String rangoIn=sc.nextLine();
-                System.out.println("Digame el valor final de su intervalo por favor");
+                System.out.println("Digame el valor final de su intervalo porfavor");
                 String rangoFin=sc.nextLine();
                 String rango=rangoIn+" a "+rangoFin;
                 mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, Data.ciudades);
@@ -204,7 +212,7 @@ public class MenuCliente {
     System.out.println("No entiendo, desea reservar un hotel? ");
     String reserva=sc.nextLine();
         if (reserva.equalsIgnoreCase("si")){
-            mostrarInformacion();
+            realizarReserva();
         }else if(reserva.equalsIgnoreCase("no")){
         }
     }
