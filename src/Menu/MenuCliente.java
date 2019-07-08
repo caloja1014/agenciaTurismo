@@ -7,11 +7,15 @@ package Menu;
 
 import static Menu.MenuCliente.sc;
 import data.Data;
+import static data.Data.hoteles;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import principal.Agencia;
+import static principal.Agencia.clientes;
+import static principal.Agencia.reservas;
 import principal.Ciudad;
+import principal.Cliente;
 import principal.Habitacion;
 import principal.Hotel;
 import principal.Reserva;
@@ -140,6 +144,39 @@ public class MenuCliente {
                 return c;
         }
         return null;
+    }
+    
+    public void registrarReserva(String nombre){
+        Hotel hotel=null;
+        Cliente cli=null;
+        System.out.println("Ha realizado alguna reservacion en otra ocasión?");
+        String resp=sc.nextLine();
+        if(Pattern.matches("SI", resp.toUpperCase())){
+            System.out.println("Digame su identificacion");
+            String ident=sc.nextLine();
+            for(Cliente c:clientes){
+                if(c.getIdentificacion().equalsIgnoreCase(ident)){
+                    cli=c;
+                }
+            }
+        }
+        else{
+            System.out.println("Procederemos a registrarlo");
+            cli=registrarCliente();
+        }
+        for(Hotel h:hoteles){
+            if(h.getNombre().equalsIgnoreCase(nombre)){
+                hotel=h;
+            }
+        }
+        System.out.println("Indiqueme la fecha de check In");
+        String fechCkeIn=sc.nextLine();
+        System.out.println("Indiqueme la fecha de check Out");
+        String fechCkeOut=sc.nextLine();
+        System.out.println("Cuanto dejara de abonado?");
+        int monto=sc.nextInt();
+        sc.nextLine();
+        reservas.add(new Reserva(fechCkeIn, fechCkeIn, hotel,cli,monto));
     }
     
     public ArrayList<Hotel> mostrarInformacion(String ciudad,String rango,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
