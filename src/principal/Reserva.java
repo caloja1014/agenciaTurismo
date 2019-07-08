@@ -5,7 +5,10 @@
  */
 package principal;
 
+import static java.lang.Math.random;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 /**
  *
@@ -17,6 +20,9 @@ public class Reserva {
     private Hotel hotel;
     private Cliente cliente;
     private int montoRecaudado;
+    private int codigo;
+    static ArrayList<Integer> codigos=new ArrayList<>();
+    static Random random = new Random();
     //constructor 
 
     public Reserva(String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente, int montoRecaudado) {
@@ -32,13 +38,25 @@ public class Reserva {
     }
     
     
-    
-    
     //metodo
         public boolean verificarCliente(String identificacion){
             return true;
         }
-     
+     public int generarCodigo(){
+        int cod=random.nextInt(1000000);
+        while(!validarCodigo(cod)){
+            cod=random.nextInt(1000000);
+        }
+        return cod;
+        }   
+    
+        public boolean validarCodigo(int cod){
+            if(codigos.contains(cod)){
+                return false;
+            }
+            return true;
+        }
+    
     
     //getters
     
@@ -61,7 +79,9 @@ public class Reserva {
     public int getMontoRecaudado() {
         return montoRecaudado;
     }
-    
+        public int getCodigo() {
+        return codigo;
+    }
 
     //setters
     public void setFechaCheckIn(String fechaCheckIn) {
