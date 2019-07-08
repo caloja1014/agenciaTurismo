@@ -16,10 +16,10 @@ public class Cliente {
     private String ciudadResi;
     private String nombre;
     private String email;
-    private ArrayList<String> numerosContacto;
+    private String numerosContacto;
     private String numeroTarjeta;
 
-    public Cliente(String identificacion, String ciudadResi, String nombre, String email, ArrayList<String> numerosContacto, String numeroTarjeta) {
+    public Cliente(String identificacion, String ciudadResi, String nombre, String email, String numerosContacto, String numeroTarjeta) {
         this.identificacion = identificacion;
         this.ciudadResi = ciudadResi;
         this.nombre = nombre;
@@ -44,7 +44,7 @@ public class Cliente {
         return email;
     }
 
-    public ArrayList<String> getNumerosContacto() {
+    public String getNumerosContacto() {
         return numerosContacto;
     }
 
@@ -68,7 +68,7 @@ public class Cliente {
         this.email = email;
     }
 
-    public void setNumerosContacto(ArrayList<String> numerosContacto) {
+    public void setNumerosContacto(String numerosContacto) {
         this.numerosContacto = numerosContacto;
     }
 

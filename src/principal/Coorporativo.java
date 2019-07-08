@@ -17,7 +17,7 @@ public class Coorporativo extends Cliente{
     private String nombreGerente;
     private ArrayList<String> empleados;
     
-    public Coorporativo(String identificacion, String ciudadResi, String nombre, String email, ArrayList<String> numerosContacto, String numeroTarjeta, String informacionContacto, String cargo, String nombreGerente) {
+    public Coorporativo(String identificacion, String ciudadResi, String nombre, String email, String numerosContacto, String numeroTarjeta, String informacionContacto, String cargo, String nombreGerente) {
         super(identificacion, ciudadResi, nombre, email, numerosContacto, numeroTarjeta);
         this.informacionContacto=informacionContacto;
         this.cargo=cargo;

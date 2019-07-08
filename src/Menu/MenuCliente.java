@@ -179,6 +179,24 @@ public class MenuCliente {
         reservas.add(new Reserva(fechCkeIn, fechCkeIn, hotel,cli,monto));
     }
     
+    public Cliente registrarCliente(){
+        System.out.println("Indiqueme su identificacion");
+        String identificacion=sc.nextLine();
+        System.out.println("Indiqueme su ciudad de residencia");
+        String ciudadResi=sc.nextLine();
+        System.out.println("Indiqueme su nombre");
+        String nombre=sc.nextLine();
+        System.out.println("Indiqueme email");
+        String email=sc.nextLine();
+        System.out.println("Indiqueme su numero de telefono o celular");
+        String celular=sc.nextLine();
+        System.out.println("Indiqueme su numero de tarjeta");
+        String numeroTarjeta=sc.nextLine();
+        Cliente client=new Cliente(identificacion, ciudadResi,nombre, email, celular, numeroTarjeta);
+        clientes.add(client);
+        return client;
+    }
+    
     public ArrayList<Hotel> mostrarInformacion(String ciudad,String rango,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
         String[] rangoPrecio=rango.split("a");
         Double rangoSuperior=Double.parseDouble(rangoPrecio[0].trim());
@@ -249,8 +267,9 @@ public class MenuCliente {
     System.out.println("No entiendo, desea reservar un hotel? ");
     String reserva=sc.nextLine();
         if (reserva.equalsIgnoreCase("si")){
-            realizarReserva();
-        }else if(reserva.equalsIgnoreCase("no")){
+            System.out.println("Indiqueme la ciudad en la que desea recidir");
+            String ciudad=sc.nextLine();
+            realizarReserva(ciudad);
         }
     }
 
