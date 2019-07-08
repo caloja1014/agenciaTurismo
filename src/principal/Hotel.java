@@ -5,6 +5,8 @@
  */
 package principal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author gabrielapazmino
@@ -22,7 +24,7 @@ public class Hotel {
     private String foto;
     private String latitud;
     private String longitud;
-    
+    private ArrayList<String> servicios=new ArrayList();
         //constructor
 
     public Hotel(String idHotel, String idCiudad, String nombre, String descipcionHotel, String targetaHotel, String ubicacion, String direccion, String webHotel, String clasificacion, String foto, String latitud, String longitud) {
@@ -143,5 +145,11 @@ public class Hotel {
     }
     
     
+    /**
+     * @return the servicios
+     */
+    public ArrayList<String> getServicios() {
+        return servicios;
+    }
     
 }
