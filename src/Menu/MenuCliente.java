@@ -148,30 +148,34 @@ public class MenuCliente {
                     System.out.println("Indique el servicio que desea");
                     String servicio=sc.nextLine();
                     hotelesOp=mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, servicio, Data.ciudades);
+                    this.mostrarHoteles(hotelesOp);
                     System.out.println("Indiqueme el nombre del hotel que desea reservar");
                     String nombre=sc.nextLine();
                     registrarReserva(nombre);
                 }
                 else{
+                    this.mostrarHoteles(hotelesOp);
                     System.out.println("Indiqueme el nombre del hotel que desea reservar");
                     String nombre=sc.nextLine();
                     registrarReserva(nombre);
                 }
             }
             else{
-                hotelesOp=mostrarInformacion(c1);
+                hotelesOp=mostrarInformacion(c1.getNombre(),data.Data.habitaciones,data.Data.ciudades);
                 System.out.println("Desea algun servicio en especifico?");
                 String rsp=sc.nextLine();
                 if(Pattern.matches(".*SI.*",rsp.toUpperCase())){
                     hotelesOp.clear();
                     System.out.println("Indique el servicio que desea");
                     String servicio=sc.nextLine();
-                    hotelesOp=mostrarInformacion(c1.getNombre(), Data.habitaciones, servicio, Data.ciudades);
+                    hotelesOp=mostrarInformacion(c1.getNombre(), Data.habitaciones, Data.ciudades,servicio);
+                    this.mostrarHoteles(hotelesOp);
                     System.out.println("Indiqueme el nombre del hotel que desea reservar");
                     String nombre=sc.nextLine();
                     registrarReserva(nombre);
                 }
                 else{
+                    this.mostrarHoteles(hotelesOp);
                     System.out.println("Indiqueme el nombre del hotel que desea reservar");
                     String nombre=sc.nextLine();
                     registrarReserva(nombre);
@@ -362,5 +366,18 @@ public class MenuCliente {
         }
     }
 
-   
+  public void mostrarHoteles(ArrayList<Hotel> hoteles){
+        int num=0;
+
+        for (Hotel hotel :hoteles){
+            if(hotel==null){
+                System.out.println("No hay informacion para presentar ");
+            }
+            else{
+                num++;
+                System.out.println(num+". "+hotel.getNombre());
+                
+            }
+    }
+    }
 }
