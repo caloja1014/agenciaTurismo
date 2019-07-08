@@ -368,7 +368,7 @@ public class MenuCliente {
 
   public void mostrarHoteles(ArrayList<Hotel> hoteles){
         int num=0;
-
+        try{
         for (Hotel hotel :hoteles){
             if(hotel==null){
                 System.out.println("No hay informacion para presentar ");
@@ -376,8 +376,10 @@ public class MenuCliente {
             else{
                 num++;
                 System.out.println(num+". "+hotel.getNombre());
-                
+            }    
             }
+        }catch(NullPointerException n){
+        
+        }
+  }
     }
-    }
-}
