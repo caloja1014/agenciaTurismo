@@ -109,7 +109,6 @@ public class MenuCliente {
     }
     
     public void realizarReserva(String usuario1){
-        
         Ciudad c1=validarPorCiudad(usuario1);
         if(c1!=null){
             reservaPorCiudad(c1);
@@ -121,8 +120,6 @@ public class MenuCliente {
                 reservaPorCiudad(c2);
             }
         }
-        
-       
     }
     
     public Ciudad validarPorCiudad(String usuario1){
@@ -131,6 +128,55 @@ public class MenuCliente {
                 return c;
         }
         return null;
+    }
+    
+    public void reservaPorCiudad(Ciudad c1){
+        ArrayList<Hotel> hotelesOp;
+        System.out.println("Desea solicitar un rango de precio?");
+            String respu=sc.nextLine();
+            if(Pattern.matches(".*SI.*",respu.toUpperCase())){
+                System.out.println("Digame el valor inicial de su intervalo porfavor");
+                String rangoIn=sc.nextLine();
+                System.out.println("Digame el valor final de su intervalo porfavor");
+                String rangoFin=sc.nextLine();
+                String rango=rangoIn+" a "+rangoFin;
+                hotelesOp=mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, Data.ciudades);
+                System.out.println("Desea algun servicio en especifico?");
+                String rsp=sc.nextLine();
+                if(Pattern.matches(".*SI.*",rsp.toUpperCase())){
+                    hotelesOp.clear();
+                    System.out.println("Indique el servicio que desea");
+                    String servicio=sc.nextLine();
+                    hotelesOp=mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, servicio, Data.ciudades);
+                    System.out.println("Indiqueme el nombre del hotel que desea reservar");
+                    String nombre=sc.nextLine();
+                    registrarReserva(nombre);
+                }
+                else{
+                    System.out.println("Indiqueme el nombre del hotel que desea reservar");
+                    String nombre=sc.nextLine();
+                    registrarReserva(nombre);
+                }
+            }
+            else{
+                hotelesOp=mostrarInformacion(c1);
+                System.out.println("Desea algun servicio en especifico?");
+                String rsp=sc.nextLine();
+                if(Pattern.matches(".*SI.*",rsp.toUpperCase())){
+                    hotelesOp.clear();
+                    System.out.println("Indique el servicio que desea");
+                    String servicio=sc.nextLine();
+                    hotelesOp=mostrarInformacion(c1.getNombre(), Data.habitaciones, servicio, Data.ciudades);
+                    System.out.println("Indiqueme el nombre del hotel que desea reservar");
+                    String nombre=sc.nextLine();
+                    registrarReserva(nombre);
+                }
+                else{
+                    System.out.println("Indiqueme el nombre del hotel que desea reservar");
+                    String nombre=sc.nextLine();
+                    registrarReserva(nombre);
+                }
+            }
     }
     
     public void registrarReserva(String nombre){
