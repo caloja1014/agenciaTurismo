@@ -51,6 +51,7 @@ public class MenuCliente {
                 String validacion=sc.nextLine();
                 while (!listaValsino.contains(validacion)){
                     System.out.println("Dato incorrecto, ingrese si o no");
+                    validacion=sc.nextLine();
                 }
                 if (validacion.equalsIgnoreCase("si")){
                     opcion=true;
@@ -64,6 +65,7 @@ public class MenuCliente {
                 String validacion=sc.nextLine();
                 while (!listaValsino.contains(validacion)){
                     System.out.println("Dato incorrecto, ingrese si o no");
+                    validacion=sc.nextLine();
                 }
                 if (validacion.equalsIgnoreCase("si")){
                     opcion=true;
@@ -72,17 +74,15 @@ public class MenuCliente {
                 }
             }
             else if(consultar){
-                
                 String ciu=sc.nextLine();
                 String cod=sc.nextLine();
                 String serv=sc.nextLine();
-
                 mostrarInformacion(String ciu, String cod, ArrayList<Habitacion> habitacionesL, ArrayList<Ciudad> ciudadesL);  
-                
                 System.out.println("Desea realizar otra accion?");
                 String validacion=sc.nextLine();
                 while (!listaValsino.contains(validacion)){
                     System.out.println("Dato incorrecto, ingrese si o no");
+                    validacion=sc.nextLine();
                 }
                 if (validacion.equalsIgnoreCase("si")){
                     opcion=true;
