@@ -152,4 +152,7 @@ public class Hotel {
         return servicios;
     }
     
+    public String toString() {
+        return "Hotel{" + "nombre=" + nombre + ", descipcionHotel=" + descipcionHotel + ", targetaHotel=" + targetaHotel + ", ubicacion=" + ubicacion + ", direccion=" + direccion + ", webHotel=" + webHotel + ", clasificacion=" + clasificacion + ", foto=" + foto + ", latitud=" + latitud + ", longitud=" + longitud + '}';
+    }
 }

@@ -39,9 +39,15 @@ public class Reserva {
     
     
     //metodo
-        public boolean verificarCliente(String identificacion){
-            return true;
+    public boolean verificarCliente(String identificacion){
+        for(Cliente c:Agencia.clientes){
+           if(c.getIdentificacion().equals(identificacion)){
+               return true;
+           } 
         }
+        return false;
+    }
+        
      public int generarCodigo(){
         int cod=random.nextInt(1000000);
         while(!validarCodigo(cod)){

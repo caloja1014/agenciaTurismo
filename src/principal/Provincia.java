@@ -59,5 +59,7 @@ public class Provincia {
         return webProv;
     }
     
-    
+    public String toString() {
+        return "Provincia{" + "nombre=" + nombre + ", descripcionProvincia=" + descripcionProvincia + ", region=" + region + ", webProv=" + webProv + '}';
+    }
 }

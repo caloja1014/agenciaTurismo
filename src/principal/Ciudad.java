@@ -41,5 +41,7 @@ public class Ciudad {
         return nombre;
     }
     
-    
+    public String toString() {
+        return "Ciudad{" + "nombre=" + nombre + '}';
+    }
 }
