@@ -21,12 +21,12 @@ import principal.Servicio;
  * @author Cloja
  */
 public class Data {
-    public static ArrayList<String> archivoHabitaciones=ProcesamientoData.lecturaArchivo("C:\\Users\\Cloja\\Documents\\NetBeansProjects\\Proyecto\\src\\bdatos\\habitaciones.csv");
-    public static ArrayList<String> archivoCiudades=ProcesamientoData.lecturaArchivo("C:\\Users\\Cloja\\Documents\\NetBeansProjects\\Proyecto\\src\\bdatos\\ciudades.csv");
-    public static ArrayList<String> archivoCatalogo=ProcesamientoData.lecturaArchivo("C:\\Users\\Cloja\\Documents\\NetBeansProjects\\Proyecto\\src\\bdatos\\catalogo.csv");
-    public static ArrayList<String> archivoHoteles=ProcesamientoData.lecturaArchivo("C:\\Users\\Cloja\\Documents\\NetBeansProjects\\Proyecto\\src\\bdatos\\hoteles1.csv");
-    public static ArrayList<String> archivoProvincias=ProcesamientoData.lecturaArchivo("C:\\Users\\Cloja\\Documents\\NetBeansProjects\\Proyecto\\src\\bdatos\\provincias.csv");
-    public static ArrayList<String> archivoServicios=ProcesamientoData.lecturaArchivo("C:\\Users\\Cloja\\Documents\\NetBeansProjects\\Proyecto\\src\\bdatos\\servicios.csv");
+    public static ArrayList<String> archivoHabitaciones=ProcesamientoData.lecturaArchivo("src/Archivos/habitaciones.csv");
+    public static ArrayList<String> archivoCiudades=ProcesamientoData.lecturaArchivo("src/Archivos/ciudades.csv");
+    public static ArrayList<String> archivoCatalogo=ProcesamientoData.lecturaArchivo("src/Archivos/catalogo.csv");
+    public static ArrayList<String> archivoHoteles=ProcesamientoData.lecturaArchivo("src/Archivos/hoteles1.csv");
+    public static ArrayList<String> archivoProvincias=ProcesamientoData.lecturaArchivo("src/Archivos/provincias.csv");
+    public static ArrayList<String> archivoServicios=ProcesamientoData.lecturaArchivo("src/Archivos/servicios.csv");
 
     public static ArrayList<Provincia> provincias=ProcesamientoData.crearListaProvincias(Data.archivoProvincias);
     public static ArrayList<Ciudad> ciudades=ProcesamientoData.crearListaCiudades(Data.archivoCiudades);
