@@ -66,7 +66,7 @@ public class MenuCliente {
                 }
             }
             else if(consultar){
-                mostrarInfromacion();   
+                mostrarInformacion();   
                 System.out.println("Desea realizar otra accion?");
                 String validacion=sc.nextLine();
                 while (!listaValsino.contains(validacion)){
@@ -203,8 +203,8 @@ public class MenuCliente {
     System.out.println("No entiendo, desea reservar un hotel? ");
     String reserva=sc.nextLine();
         if (reserva.equalsIgnoreCase("si")){
-            mostrarInformacion();}
-        else if(reserva.equalsIgnoreCase("no")){
+            mostrarInformacion();
+        }else if(reserva.equalsIgnoreCase("no")){
         }
     }
 
