@@ -31,8 +31,8 @@ public class Agencia {
 public void presentarMenu() throws ParseException{     
         System.out.println("Buenas dias, que cargo tiene usted?(Cliente o agencia)");
         String ocupacion=sc.nextLine();
-        boolean client=Pattern.matches(".*agencia.*", ocupacion);
-        boolean agent=Pattern.matches(".*cliente.*", ocupacion);
+        boolean client=Pattern.matches(".*CLIENTE.*", ocupacion.toUpperCase());
+        boolean agent=Pattern.matches(".*AGENCIA.*", ocupacion.toUpperCase());
         if (client){
             MenuCliente mc=new MenuCliente();
         }else if(agent){
