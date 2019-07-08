@@ -197,16 +197,10 @@ public class MenuCliente {
         return client;
     }
     
-   public ArrayList<Hotel> mostrarInformacion(String ciudad,String rango,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
-        String[] rangoPrecio=rango.split("a");
-        Double rangoSuperior=Double.parseDouble(rangoPrecio[0].trim());
-        Double rangoInferior=Double.parseDouble(rangoPrecio[1].trim());
-        Scanner s= new Scanner(System.in);
+      public ArrayList<Hotel> mostrarInformacion(String ciudad,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
         ArrayList<Habitacion> habitacionesEscogidas=new ArrayList();
         ArrayList<Hotel> hoteles= new ArrayList();
-        
-        for (Habitacion habitacion: habitaciones ){
-             if (habitacion.getTarifaSencilla()>=rangoInferior && (habitacion.getTarifaDoble()<=rangoSuperior || habitacion.getTarifaDoble()==0.0||habitacion.getTarifaTriple()<=rangoSuperior||habitacion.getTarifaTriple()==0.00 )){
+            for (Habitacion habitacion: habitaciones ){
                 int indiceHotel=Integer.parseInt(habitacion.getIdHotel())-1;
                 Hotel hotel=data.Data.hoteles.get(indiceHotel);
                 
@@ -219,6 +213,62 @@ public class MenuCliente {
                     habitacionesEscogidas.add(habitacion);
                 }
                 }
+            
+        }
+        if (hoteles.size()>0){
+            return hoteles;
+        }
+        else{
+            return null;
+        }
+        
+        
+        }
+    
+     public ArrayList<Hotel> mostrarInformacion(String ciudad,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades,String servicio){
+     ArrayList<Hotel>hotelesEscogidos=this.mostrarInformacion(ciudad, habitaciones,ciudades);
+        ArrayList<Hotel>hotelesFinales=new ArrayList();
+        for (Hotel hotel :hotelesEscogidos){
+            ArrayList<String> servicios=hotel.getServicios();
+            if (servicios.contains(servicio)){
+                hotelesFinales.add(hotel);
+            }
+        }
+        if (hotelesFinales.size()>0){
+            return hotelesFinales;
+        }
+        else{
+        return null;
+        }
+     
+     }
+    
+    
+    public ArrayList<Hotel> mostrarInformacion(String ciudad,String rango,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
+        String[] rangoPrecio=rango.split("a");
+        Double rangoSuperior=Double.parseDouble(rangoPrecio[0].trim());
+        Double rangoInferior=Double.parseDouble(rangoPrecio[1].trim());
+        Scanner s= new Scanner(System.in);
+        ArrayList<Habitacion> habitacionesEscogidas=new ArrayList();
+        ArrayList<Hotel> hoteles= new ArrayList();
+        ArrayList<Hotel> hotelesPorCiudad= this.mostrarInformacion(ciudad, habitaciones, ciudades);
+        for (Habitacion habitacion: habitaciones ){
+             if (habitacion.getTarifaSencilla()>=rangoInferior && (habitacion.getTarifaDoble()<=rangoSuperior || habitacion.getTarifaDoble()==0.0||habitacion.getTarifaTriple()<=rangoSuperior||habitacion.getTarifaTriple()==0.00 )){
+                int indiceHotel=Integer.parseInt(habitacion.getIdHotel())-1;
+                Hotel hotel=data.Data.hoteles.get(indiceHotel);
+                
+                for (Hotel h:hotelesPorCiudad){
+                    if(hotel.getIdHotel()==h.getIdHotel()){
+                        if (!hoteles.contains(h)){
+                    hoteles.add(h);
+                    habitacionesEscogidas.add(habitacion);
+                }
+                    }
+                }
+                     
+
+                
+               
             }
         }
         if (hoteles.size()>0){
@@ -227,7 +277,8 @@ public class MenuCliente {
         else{
             return null;
         }
-   }
+        
+    }
     
     public ArrayList<Hotel> mostrarInformacion(String ciudad,String rango,ArrayList<Habitacion> habitaciones,String servicio,ArrayList<Ciudad> ciudades){
         ArrayList<Hotel>hotelesEscogidos=this.mostrarInformacion(ciudad,rango, habitaciones,ciudades);
