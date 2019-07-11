@@ -6,8 +6,10 @@
 package data;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import principal.*;
@@ -104,6 +106,35 @@ public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lis
         for (String servicio:lista){
             String[] ser=servicio.split("\\|");
             listaObjeto.add(new Servicio(ser[0],ser[1],ser[2],Boolean.parseBoolean(ser[3])));
+        }
+        }catch (NullPointerException  ex){}
+        return listaObjeto;
+    }
+    
+        public static void escribirArchivoClientesRegistrados(Cliente cliente) throws IOException{
+    
+    String ruta = "src/Archivos/clientes.csv";
+        File archivo = new File(ruta);
+        BufferedWriter bw;
+        
+        String cadena=cliente.getIdentificacion()+"|"+cliente.getCiudadResi()+"|"+cliente.getNombre()+"|"+cliente.getEmail()+"|"+cliente.getNumerosContacto()+"|"+cliente.getNumeroTarjeta();
+        if(archivo.exists()) {
+            bw = new BufferedWriter(new FileWriter(archivo,true));
+            bw.write(cadena+"\n");
+        } else {
+            bw = new BufferedWriter(new FileWriter(archivo,true));
+            bw.write("identificacion|ciudadResi|nombre|email|celular|numeroTarjeta\n");
+            bw.write(cadena+"\n");
+        }
+        bw.close();
+}
+        
+    public static ArrayList<Cliente> crearListaClientes(ArrayList<String> lista ){
+        ArrayList<Cliente> listaObjeto=new ArrayList();
+        try{
+        for (String cliente:lista){
+            String[] cl=cliente.split("\\|");
+            listaObjeto.add(new Cliente(cl[0], cl[1],cl[2], cl[3], cl[4], cl[5]));
         }
         }catch (NullPointerException  ex){}
         return listaObjeto;
