@@ -16,6 +16,7 @@ import static principal.Agencia.clientes;
 import static principal.Agencia.reservas;
 import principal.Ciudad;
 import principal.Cliente;
+import principal.Coorporativo;
 import principal.Habitacion;
 import principal.Hotel;
 import principal.Reserva;
@@ -273,6 +274,19 @@ public class MenuCliente {
         String celular=sc.nextLine();
         System.out.println("Indiqueme su numero de tarjeta");
         String numeroTarjeta=sc.nextLine();
+        System.out.println("Viene como turista o como coorporativo?");
+        String estado=sc.nextLine();
+        if(Pattern.matches(".*coorporativo.*",estado.toLowerCase())){
+            System.out.println("Indiqueme la informacion de contacto?");
+            String infoContacto=sc.nextLine();
+            System.out.println("Indiqueme su cargo");
+            String cargo=sc.nextLine();
+            System.out.println("Indiqueme el nombre del gerente");
+            String nombreGerente=sc.nextLine();
+            Cliente client=new Coorporativo(identificacion, ciudadResi,nombre, email, celular, numeroTarjeta, infoContacto, cargo, nombreGerente);
+            clientes.add(client);
+            return client;
+        }
         Cliente client=new Cliente(identificacion, ciudadResi,nombre, email, celular, numeroTarjeta);
         clientes.add(client);
         return client;
