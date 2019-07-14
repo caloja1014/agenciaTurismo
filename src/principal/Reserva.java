@@ -48,24 +48,22 @@ public class Reserva {
         return false;
     }
         
-     public int generarCodigo(){
+    public int generarCodigo(){
         int cod=random.nextInt(1000000);
         while(!validarCodigo(cod)){
             cod=random.nextInt(1000000);
         }
         return cod;
-        }   
+    }   
     
-        public boolean validarCodigo(int cod){
-            if(codigos.contains(cod)){
-                return false;
-            }
-            return true;
+    public boolean validarCodigo(int cod){
+        if(codigos.contains(cod)){
+            return false;
         }
-    
+        return true;
+    }
     
     //getters
-    
     public String getFechaCheckIn() {
         return fechaCheckIn;
     }
@@ -104,10 +102,5 @@ public class Reserva {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }
-
-
-    
-
-        
+    }    
 }

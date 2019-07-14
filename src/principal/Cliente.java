@@ -75,5 +75,4 @@ public class Cliente {
     public void setNumeroTarjeta(String numeroTarjeta) {
         this.numeroTarjeta = numeroTarjeta;
     }
-    
 }

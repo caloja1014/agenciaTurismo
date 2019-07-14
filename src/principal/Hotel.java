@@ -42,10 +42,7 @@ public class Hotel {
         this.longitud = longitud;
     }
     
-    
-        
         //getters
-
     public String getIdHotel() {
         return idHotel;
     }
@@ -94,8 +91,8 @@ public class Hotel {
         return longitud;
     }
         
+    
     //setters
-
     public void setIdHotel(String idHotel) {
         this.idHotel = idHotel;
     }
@@ -143,7 +140,6 @@ public class Hotel {
     public void setLongitud(String longitud) {
         this.longitud = longitud;
     }
-    
     
     /**
      * @return the servicios

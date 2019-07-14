@@ -18,17 +18,15 @@ import java.util.regex.Pattern;
  * @author gabrielapazmino
  */
 public class Agencia {
-    
     public static ArrayList<Reserva> reservas=new ArrayList<>();
     public static ArrayList<Cliente> clientes=new ArrayList<>();
-
     Scanner sc=new Scanner(System.in);
     
     public Agencia() throws ParseException {
         presentarMenu();
     }
         
-public void presentarMenu() throws ParseException{     
+    public void presentarMenu() throws ParseException{     
         System.out.println("Buenas dias, que cargo tiene usted?(Cliente o agencia)");
         String ocupacion=sc.nextLine();
         boolean client=Pattern.matches(".*CLIENTE.*", ocupacion.toUpperCase());
@@ -38,9 +36,5 @@ public void presentarMenu() throws ParseException{
         }else if(agent){
             MenuAgencia ma=new MenuAgencia();    
         }  
-        
-    
-    }
-
-            
+    }       
 }

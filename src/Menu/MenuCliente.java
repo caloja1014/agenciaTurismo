@@ -104,8 +104,7 @@ public class MenuCliente {
                 }
             }
         }
-            System.out.println("Gracias por preferirnos!!");
-    Scanner sc=new Scanner(System.in);
+        System.out.println("Gracias por preferirnos!!");
     }
     
     public void realizarReserva(String usuario1){
@@ -133,54 +132,54 @@ public class MenuCliente {
     public void reservaPorCiudad(Ciudad c1){
         ArrayList<Hotel> hotelesOp;
         System.out.println("Desea solicitar un rango de precio?");
-            String respu=sc.nextLine();
-            if(Pattern.matches(".*SI.*",respu.toUpperCase())){
-                System.out.println("Digame el valor inicial de su intervalo porfavor");
-                String rangoIn=sc.nextLine();
-                System.out.println("Digame el valor final de su intervalo porfavor");
-                String rangoFin=sc.nextLine();
-                String rango=rangoIn+" a "+rangoFin;
-                hotelesOp=mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, Data.ciudades);
-                System.out.println("Desea algun servicio en especifico?");
-                String rsp=sc.nextLine();
-                if(Pattern.matches(".*SI.*",rsp.toUpperCase())){
-                    hotelesOp.clear();
-                    System.out.println("Indique el servicio que desea");
-                    String servicio=sc.nextLine();
-                    hotelesOp=mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, servicio, Data.ciudades);
-                    this.mostrarHoteles(hotelesOp);
-                    System.out.println("Indiqueme el nombre del hotel que desea reservar");
-                    String nombre=sc.nextLine();
-                    registrarReserva(nombre);
-                }
-                else{
-                    this.mostrarHoteles(hotelesOp);
-                    System.out.println("Indiqueme el nombre del hotel que desea reservar");
-                    String nombre=sc.nextLine();
-                    registrarReserva(nombre);
-                }
+        String respu=sc.nextLine();
+        if(Pattern.matches(".*SI.*",respu.toUpperCase())){
+            System.out.println("Digame el valor inicial de su intervalo porfavor");
+            String rangoIn=sc.nextLine();
+            System.out.println("Digame el valor final de su intervalo porfavor");
+            String rangoFin=sc.nextLine();
+            String rango=rangoIn+" a "+rangoFin;
+            hotelesOp=mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, Data.ciudades);
+            System.out.println("Desea algun servicio en especifico?");
+            String rsp=sc.nextLine();
+            if(Pattern.matches(".*SI.*",rsp.toUpperCase())){
+                hotelesOp.clear();
+                System.out.println("Indique el servicio que desea");
+                String servicio=sc.nextLine();
+                hotelesOp=mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, servicio, Data.ciudades);
+                this.mostrarHoteles(hotelesOp);
+                System.out.println("Indiqueme el nombre del hotel que desea reservar");
+                String nombre=sc.nextLine();
+                registrarReserva(nombre);
             }
             else{
-                hotelesOp=mostrarInformacion(c1.getNombre(),data.Data.habitaciones,data.Data.ciudades);
-                System.out.println("Desea algun servicio en especifico?");
-                String rsp=sc.nextLine();
-                if(Pattern.matches(".*SI.*",rsp.toUpperCase())){
-                    hotelesOp.clear();
-                    System.out.println("Indique el servicio que desea");
-                    String servicio=sc.nextLine();
-                    hotelesOp=mostrarInformacion(c1.getNombre(), Data.habitaciones, Data.ciudades,servicio);
-                    this.mostrarHoteles(hotelesOp);
-                    System.out.println("Indiqueme el nombre del hotel que desea reservar");
-                    String nombre=sc.nextLine();
-                    registrarReserva(nombre);
-                }
-                else{
-                    this.mostrarHoteles(hotelesOp);
-                    System.out.println("Indiqueme el nombre del hotel que desea reservar");
-                    String nombre=sc.nextLine();
-                    registrarReserva(nombre);
-                }
+                this.mostrarHoteles(hotelesOp);
+                System.out.println("Indiqueme el nombre del hotel que desea reservar");
+                String nombre=sc.nextLine();
+                registrarReserva(nombre);
             }
+        }
+        else{
+            hotelesOp=mostrarInformacion(c1.getNombre(),data.Data.habitaciones,data.Data.ciudades);
+            System.out.println("Desea algun servicio en especifico?");
+            String rsp=sc.nextLine();
+            if(Pattern.matches(".*SI.*",rsp.toUpperCase())){
+                hotelesOp.clear();
+                System.out.println("Indique el servicio que desea");
+                String servicio=sc.nextLine();
+                hotelesOp=mostrarInformacion(c1.getNombre(), Data.habitaciones, Data.ciudades,servicio);
+                this.mostrarHoteles(hotelesOp);
+                System.out.println("Indiqueme el nombre del hotel que desea reservar");
+                String nombre=sc.nextLine();
+                registrarReserva(nombre);
+            }
+            else{
+                this.mostrarHoteles(hotelesOp);
+                System.out.println("Indiqueme el nombre del hotel que desea reservar");
+                String nombre=sc.nextLine();
+                registrarReserva(nombre);
+            }
+        }
     }
     
     public void registrarReserva(String nombre){
@@ -206,9 +205,9 @@ public class MenuCliente {
                 hotel=h;
             }
         }
-        System.out.println("Indiqueme la fecha de check In");
+        System.out.println("Indiqueme la fecha de check In (formato yyyy-MM-dd)");
         String fechCkeIn=sc.nextLine();
-        System.out.println("Indiqueme la fecha de check Out");
+        System.out.println("Indiqueme la fecha de check Out (formato yyyy-MM-dd)");
         String fechCkeOut=sc.nextLine();
         System.out.println("Cuanto dejara de abonado?");
         int monto=sc.nextInt();
@@ -234,23 +233,19 @@ public class MenuCliente {
         return client;
     }
     
-      public ArrayList<Hotel> mostrarInformacion(String ciudad,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
+    public ArrayList<Hotel> mostrarInformacion(String ciudad,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
         ArrayList<Habitacion> habitacionesEscogidas=new ArrayList();
         ArrayList<Hotel> hoteles= new ArrayList();
-            for (Habitacion habitacion: habitaciones ){
-                int indiceHotel=Integer.parseInt(habitacion.getIdHotel())-1;
-                Hotel hotel=data.Data.hoteles.get(indiceHotel);
-                
-                String ciu= ciudades.get(Integer.parseInt(hotel.getIdCiudad())-1).getNombre();
-                if (ciu.equalsIgnoreCase(ciudad)){
-                     
-
+        for (Habitacion habitacion: habitaciones ){
+            int indiceHotel=Integer.parseInt(habitacion.getIdHotel())-1;
+            Hotel hotel=data.Data.hoteles.get(indiceHotel);            
+            String ciu= ciudades.get(Integer.parseInt(hotel.getIdCiudad())-1).getNombre();
+            if (ciu.equalsIgnoreCase(ciudad)){
                 if (!hoteles.contains(hotel)){
                     hoteles.add(hotel);
                     habitacionesEscogidas.add(habitacion);
                 }
-                }
-            
+            }
         }
         if (hoteles.size()>0){
             return hoteles;
@@ -258,12 +253,10 @@ public class MenuCliente {
         else{
             return null;
         }
-        
-        
-        }
+    }
     
-     public ArrayList<Hotel> mostrarInformacion(String ciudad,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades,String servicio){
-     ArrayList<Hotel>hotelesEscogidos=this.mostrarInformacion(ciudad, habitaciones,ciudades);
+    public ArrayList<Hotel> mostrarInformacion(String ciudad,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades,String servicio){
+        ArrayList<Hotel>hotelesEscogidos=this.mostrarInformacion(ciudad, habitaciones,ciudades);
         ArrayList<Hotel>hotelesFinales=new ArrayList();
         for (Hotel hotel :hotelesEscogidos){
             ArrayList<String> servicios=hotel.getServicios();
@@ -275,10 +268,9 @@ public class MenuCliente {
             return hotelesFinales;
         }
         else{
-        return null;
-        }
-     
-     }
+            return null;
+        } 
+    }
     
     
     public ArrayList<Hotel> mostrarInformacion(String ciudad,String rango,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
@@ -290,22 +282,17 @@ public class MenuCliente {
         ArrayList<Hotel> hoteles= new ArrayList();
         ArrayList<Hotel> hotelesPorCiudad= this.mostrarInformacion(ciudad, habitaciones, ciudades);
         for (Habitacion habitacion: habitaciones ){
-             if (habitacion.getTarifaSencilla()>=rangoInferior && (habitacion.getTarifaDoble()<=rangoSuperior || habitacion.getTarifaDoble()==0.0||habitacion.getTarifaTriple()<=rangoSuperior||habitacion.getTarifaTriple()==0.00 )){
+            if (habitacion.getTarifaSencilla()>=rangoInferior && (habitacion.getTarifaDoble()<=rangoSuperior || habitacion.getTarifaDoble()==0.0||habitacion.getTarifaTriple()<=rangoSuperior||habitacion.getTarifaTriple()==0.00 )){
                 int indiceHotel=Integer.parseInt(habitacion.getIdHotel())-1;
                 Hotel hotel=data.Data.hoteles.get(indiceHotel);
-                
                 for (Hotel h:hotelesPorCiudad){
                     if(hotel.getIdHotel()==h.getIdHotel()){
                         if (!hoteles.contains(h)){
-                    hoteles.add(h);
-                    habitacionesEscogidas.add(habitacion);
-                }
+                            hoteles.add(h);
+                            habitacionesEscogidas.add(habitacion);
+                        }
                     }
                 }
-                     
-
-                
-               
             }
         }
         if (hoteles.size()>0){
@@ -314,7 +301,6 @@ public class MenuCliente {
         else{
             return null;
         }
-        
     }
     
     public ArrayList<Hotel> mostrarInformacion(String ciudad,String rango,ArrayList<Habitacion> habitaciones,String servicio,ArrayList<Ciudad> ciudades){
@@ -330,7 +316,7 @@ public class MenuCliente {
             return hotelesFinales;
         }
         else{
-        return null;
+            return null;
         }
     }
 
@@ -338,21 +324,21 @@ public class MenuCliente {
         boolean opcion=true;
         System.out.println("Lamento escuchar eso, me podría decir el código de su reserva?");
         while (opcion){
-        String resp=sc.nextLine();
-        int respConv=Integer.parseInt(resp);
-        Reserva rev=new Reserva();
-        if(rev.validarCodigo(respConv)){
-            for(Reserva r:Agencia.reservas){
-                if(resp.equals(r.getCodigo())){
-                    Agencia.reservas.remove(r); 
+            String resp=sc.nextLine();
+            int respConv=Integer.parseInt(resp);
+            Reserva rev=new Reserva();
+            if(rev.validarCodigo(respConv)){
+                for(Reserva r:Agencia.reservas){
+                    if(resp.equals(r.getCodigo())){
+                        Agencia.reservas.remove(r); 
+                    }
                 }
+                System.out.println("Su reserva ha sido cancelada exitosamente");
+                opcion=false;
             }
-            System.out.println("Su reserva ha sido cancelada exitosamente");
-            opcion=false;
-        }
-        else{
-            System.out.println("El código ingresado es incorrecto, favor ingrese el código nuevamente");
-        }
+            else{
+                System.out.println("El código ingresado es incorrecto, favor ingrese el código nuevamente");
+            }
         }
     }
 
@@ -366,7 +352,7 @@ public class MenuCliente {
         }
     }
 
-  public void mostrarHoteles(ArrayList<Hotel> hoteles){
+    public void mostrarHoteles(ArrayList<Hotel> hoteles){
         int num=0;
         try{
         for (Hotel hotel :hoteles){
@@ -377,9 +363,9 @@ public class MenuCliente {
                 num++;
                 System.out.println(num+". "+hotel.getNombre());
             }    
-            }
-        }catch(NullPointerException n){
-        
         }
-  }
+        }catch(NullPointerException n){
+            System.out.println(n);
+        }
     }
+}

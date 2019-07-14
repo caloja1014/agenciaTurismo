@@ -20,7 +20,6 @@ import principal.*;
  */
 public class ProcesamientoData {
     
-    
     public static ArrayList<String> lecturaArchivo(String direccion) {
         ArrayList<String> listaElementos= new ArrayList ();
         File archivo = new File(direccion);
@@ -38,6 +37,7 @@ public class ProcesamientoData {
         }
         return listaElementos;
     }
+    
     
     public static  ArrayList<Catalogo> crearListaCatalogos(ArrayList<String> lista ){
         ArrayList<Catalogo> listaObjeto=new ArrayList();
@@ -65,7 +65,8 @@ public class ProcesamientoData {
                return listaObjeto;
     }
 
-public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lista ){
+    
+    public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lista ){
         ArrayList<Habitacion> listaObjeto=new ArrayList();        
         try{
             for (String habitacion:lista){
@@ -76,6 +77,7 @@ public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lis
             return listaObjeto;
     }
 
+    
     public static ArrayList<Hotel> crearListaHoteles(ArrayList<String> lista ){
         ArrayList<Hotel> listaObjeto=new ArrayList();
         try{
@@ -88,6 +90,7 @@ public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lis
 
     }
 
+    
     public static ArrayList<Provincia> crearListaProvincias(ArrayList<String> lista ){
         ArrayList<Provincia> listaObjeto=new ArrayList();
         try{
@@ -111,9 +114,9 @@ public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lis
         return listaObjeto;
     }
     
-        public static void escribirArchivoClientesRegistrados(Cliente cliente) throws IOException{
     
-    String ruta = "src/Archivos/clientes.csv";
+    public static void escribirArchivoClientesRegistrados(Cliente cliente) throws IOException{
+        String ruta = "src/Archivos/clientes.csv";
         File archivo = new File(ruta);
         BufferedWriter bw;
         
@@ -127,8 +130,9 @@ public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lis
             bw.write(cadena+"\n");
         }
         bw.close();
-}
-        
+    }
+    
+    
     public static ArrayList<Cliente> crearListaClientes(ArrayList<String> lista ){
         ArrayList<Cliente> listaObjeto=new ArrayList();
         try{

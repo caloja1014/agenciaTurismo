@@ -13,17 +13,13 @@ public class Catalogo {
     private String idServicio;
     private String nombre;
     
-        //constructor
-
+    //constructor
     public Catalogo(String idServicio, String nombre) {
         this.idServicio = idServicio;
         this.nombre = nombre;
     }
     
-  
-
     //getters
-
     public String getIdServicio() {
         return idServicio;
     }
@@ -33,7 +29,6 @@ public class Catalogo {
     }
     
     //setters
-
     public void setIdServicio(String idServicio) {
         this.idServicio = idServicio;
     }
@@ -41,6 +36,4 @@ public class Catalogo {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    
 }

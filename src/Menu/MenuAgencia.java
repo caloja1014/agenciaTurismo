@@ -19,32 +19,27 @@ import principal.Reserva;
  * @author Freddy
  */
 public class MenuAgencia {
-    
-   
     Scanner sc=new Scanner(System.in);
     Reserva rv=new Reserva();
     public MenuAgencia() throws ParseException {
         presentarMenuAgencia();
     }
     
-    
     public void presentarMenuAgencia() throws ParseException{
         boolean val=true;
-        
         while (val){
-        System.out.println("Menu agenecia: \n1.- Consultar Reservas \n2.- Salir");
-        String opcion=sc.nextLine();
-        
-        if(opcion.equalsIgnoreCase("1")){
-            consultarReserva();
-        }else if(opcion.equalsIgnoreCase("2")){
-            val=false;
-        }else{
-            System.out.println("No entiendo ingrese una opcion valida");
-            
-        }
-            System.out.println("Gracias por preferirnos");
-    }}
+            System.out.println("Menu agenecia: \n1.- Consultar Reservas \n2.- Salir");
+            String opcion=sc.nextLine();
+            if(opcion.equalsIgnoreCase("1")){
+                consultarReserva();
+            }else if(opcion.equalsIgnoreCase("2")){
+                val=false;
+            }else{
+                System.out.println("No entiendo ingrese una opcion valida");
+            }
+            }
+        System.out.println("Gracias por preferirnos");
+    }
         
     public void consultarReserva() throws ParseException{
         System.out.println("Ingrese fecha de inicio(formato yyyy-MM-dd): ");
@@ -62,8 +57,7 @@ public class MenuAgencia {
                 if(fechaReserConvert>=fechaIni && fechaReserConvert<=fechaOut){
                     monto+=rs.getMontoRecaudado();
                 }
-            }
-            else{
+            }else{
                 for(Ciudad c:Data.ciudades){
                     for(Hotel h:Data.hoteles){
                         if(fechaReserConvert>=fechaIni && fechaReserConvert<=fechaOut && rs.getHotel().equals(h) && h.getIdCiudad().equals(opcion)){
@@ -73,7 +67,12 @@ public class MenuAgencia {
                 }
             }
         }
-        System.out.println(monto);
+        if(monto>0){
+            System.out.println(monto);
+        }
+        else{
+            System.out.println("No existen ingresos dentro del periodo establecido");
+        }
     }
         
     public int convertirFecha(String fecha){

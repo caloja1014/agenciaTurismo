@@ -47,5 +47,4 @@ public class Coorporativo extends Cliente{
     public void setNombreGerente(String nombreGerente) {
         this.nombreGerente = nombreGerente;
     }
-    
 }

@@ -16,7 +16,6 @@ public class Servicio {
     private Boolean estado;
     
     //contructor
-
     public Servicio(String secuenia, String idHotel, String idServicio, Boolean estado) {
         this.secuenia = secuenia;
         this.idHotel = idHotel;
@@ -24,10 +23,7 @@ public class Servicio {
         this.estado = estado;
     }
     
-    
-    
     //setters
-
     public void setSecuenia(String secuenia) {
         this.secuenia = secuenia;
     }
@@ -45,7 +41,6 @@ public class Servicio {
     }
     
     //getters
-
     public String getSecuenia() {
         return secuenia;
     }
@@ -61,6 +56,4 @@ public class Servicio {
     public Boolean getEstado() {
         return estado;
     }
-    
-    
 }

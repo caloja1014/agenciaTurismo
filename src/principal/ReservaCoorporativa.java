@@ -20,5 +20,4 @@ public class ReservaCoorporativa extends Reserva{
         this.habitacionesEmpleados = habitacionesEmpleados;
         this.ocupantes = ocupantes;
     }
-    
 }
