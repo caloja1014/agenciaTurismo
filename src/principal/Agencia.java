@@ -22,10 +22,18 @@ public class Agencia {
     public static ArrayList<Cliente> clientes=new ArrayList<>();
     Scanner sc=new Scanner(System.in);
     
+    /**
+     *Se crea el constructor de la clase que llama al metodo que presenta el menu  
+     * @throws ParseException Se declara la excepcion que ocurre en el metodo que esta llamando
+     */
     public Agencia() throws ParseException {
         presentarMenu();
     }
         
+    /**
+     * este metodo presenta el menu que los separa en cliente y agencia
+     * @throws ParseException Se declara la excepcion que puede llegar a suceder
+     */
     public void presentarMenu() throws ParseException{     
         System.out.println("Buenas dias, que cargo tiene usted?(Cliente o agencia)");
         String ocupacion=sc.nextLine();

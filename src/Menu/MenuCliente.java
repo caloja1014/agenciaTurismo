@@ -31,20 +31,35 @@ public class MenuCliente {
     ArrayList<Habitacion> habitacionesL;
     ArrayList<Ciudad> ciudadesL;
     
+    /**
+     * Se crea el constructor de la clase que presentara el menu para el cliente
+     */
     public MenuCliente(){
         presentarInterfazCliente();
     }
     
+    /**
+     * Se crea el metodo presentar interfaz cliente que se refiere al bot de asistencia para el usuario
+     */
     public void presentarInterfazCliente(){
         listaValsino.add("si");
         listaValsino.add("no");
         System.out.println("Hola! Soy Buzz tu agente asignado! En que puedo ayudarte?");
         String usuario1=sc.nextLine();
-        boolean reservacion= Pattern.matches(".*reservacion.*|.*reserva.*|.*reservar.*",usuario1); 
-        boolean eliminacion= Pattern.matches(".*cancelar.*|.*eliminar.*|.*cancelacion.*|.*anular.*|.*eliminacion.*|.*anulacion.*",usuario1); 
-        boolean consultar= Pattern.matches(".*informacion.*&&.*eliminar.*|.*informacion.*&&.*anular.*",usuario1);
+        /**
+         * Se define las diferentes acciones que asistira nuestro bot que son reservar, elimnar y consultar
+         */
+        boolean reservacion= Pattern.matches(".*reservacion.*|.*reserva.*|.*reservar.*",usuario1.toLowerCase()); 
+        boolean eliminacion= Pattern.matches(".*cancelar.*|.*eliminar.*|.*cancelacion.*|.*anular.*|.*eliminacion.*|.*anulacion.*",usuario1.toLowerCase()); 
+        boolean consultar= Pattern.matches(".*informacion.*&&.*eliminar.*|.*informacion.*&&.*anular.*",usuario1.toLowerCase());
         boolean opcion=true;
+        /**
+         * Se realiza las respectivas comparaciones con lo que solicite el usuario para realizar una determinada accion
+         */
         while (opcion){
+            /**
+             * Caso reservacion que muestra las opciones segun especificaciones para luego reservar el lugar de preferencia
+             */
             if(reservacion){    
                 realizarReserva(usuario1);
                 System.out.println("Desea realizar otra accion?");
@@ -59,6 +74,9 @@ public class MenuCliente {
                     opcion=false;
                 }
             }
+            /**
+             * Caso eliminacion que permite eliminar una reservaacion solicitando un codigo
+             */
             else if(eliminacion){
                 eliminarReserva();
                 System.out.println("Desea realizar otra accion?");
@@ -73,6 +91,9 @@ public class MenuCliente {
                     opcion=false;
                 }
             }
+            /**
+             * Caso consultar que muestra por pantalla las respectivas opciones de hoteles
+             */
             else if(consultar){
                 String ciu=sc.nextLine();
                 String cod=sc.nextLine();
@@ -90,6 +111,9 @@ public class MenuCliente {
                     opcion=false;
                 }
             }
+            /**
+             * Caso nada que ocurre en caso de que no se entienda lo solicitado por el usuario
+             */
             else{
                 realizarNada();   
                 System.out.println("Desea realizar otra accion?");
@@ -107,6 +131,10 @@ public class MenuCliente {
         System.out.println("Gracias por preferirnos!!");
     }
     
+    /**
+     * 
+     * @param usuario1 Se crea el metodo realizar reserva que muestra opciones segun lo especificado para diferentes casos
+     */
     public void realizarReserva(String usuario1){
         Ciudad c1=validarPorCiudad(usuario1);
         if(c1!=null){
@@ -121,6 +149,11 @@ public class MenuCliente {
         }
     }
     
+    /**
+     * 
+     * @param usuario1 se crea el metodo para validarPorCiudad que verifica que exista la ciudad ingresada
+     * @return 
+     */
     public Ciudad validarPorCiudad(String usuario1){
         for(Ciudad c:Data.ciudades){
             if(Pattern.matches(".*"+c.getNombre().toUpperCase()+".*",usuario1.toUpperCase()))
@@ -129,6 +162,10 @@ public class MenuCliente {
         return null;
     }
     
+    /**
+     * 
+     * @param c1 Se crea el metodo reservarPorCiudad que procede a solicitar especificaciones de hoteles, ingresado previamente la ciudad de alojamiento
+     */
     public void reservaPorCiudad(Ciudad c1){
         ArrayList<Hotel> hotelesOp;
         System.out.println("Desea solicitar un rango de precio?");
@@ -182,6 +219,10 @@ public class MenuCliente {
         }
     }
     
+    /**
+     * 
+     * @param nombre Se crea el metodo registrarReserva que procede a solicitar los datos del tiempo de reserva luego de haber seleccionado el hotel
+     */
     public void registrarReserva(String nombre){
         Hotel hotel=null;
         Cliente cli=null;
@@ -215,6 +256,10 @@ public class MenuCliente {
         reservas.add(new Reserva(fechCkeIn, fechCkeIn, hotel,cli,monto));
     }
     
+    /**
+     * 
+     * @return Metodo registrarCliente que pide la informacion del cliente para poder realizar la reservacion
+     */
     public Cliente registrarCliente(){
         System.out.println("Indiqueme su identificacion");
         String identificacion=sc.nextLine();
@@ -320,6 +365,9 @@ public class MenuCliente {
         }
     }
 
+    /**
+     * metodo eliminarReserva que solicita el codigo de la reservacion para posteriormente eliminarla del sistema
+     */
     public void eliminarReserva(){
         boolean opcion=true;
         System.out.println("Lamento escuchar eso, me podría decir el código de su reserva?");
@@ -342,6 +390,9 @@ public class MenuCliente {
         }
     }
 
+    /**
+     * metodorealizarNada le recalca la opcion de reservar en el caso de que no se entienda lo que desea el cliente
+     */
     public void realizarNada(){
     System.out.println("No entiendo, desea reservar un hotel? ");
     String reserva=sc.nextLine();
