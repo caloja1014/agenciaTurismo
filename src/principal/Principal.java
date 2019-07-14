@@ -19,7 +19,6 @@ public class Principal {
  * @throws ParseException 
  */
     public static void main(String[] args) throws ParseException, IOException{
-        ProcesamientoData.escribirArchivoClientesRegistrados(new Cliente("0951690148","Guayaquil","Carlos Andres Loja Guevara","clojaguevara1@hotmail.com","0969648359","0"));
         Agencia agen=new Agencia();
     }
 }    

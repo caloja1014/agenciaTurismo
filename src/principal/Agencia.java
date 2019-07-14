@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import data.Data;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,7 +20,7 @@ import java.util.regex.Pattern;
  */
 public class Agencia {
     public static ArrayList<Reserva> reservas=new ArrayList<>();
-    public static ArrayList<Cliente> clientes=new ArrayList<>();
+    public static ArrayList<Cliente> clientes= Data.clientes;
     Scanner sc=new Scanner(System.in);
     
     /**

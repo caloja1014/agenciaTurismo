@@ -35,4 +35,5 @@ public class Data {
     public static ArrayList<Habitacion> habitaciones=ProcesamientoData.crearListaHabitaciones(Data.archivoHabitaciones);
     public static ArrayList<Catalogo> catalogos=ProcesamientoData.crearListaCatalogos(Data.archivoCatalogo);
     public static ArrayList<Servicio> servicios=ProcesamientoData.crearListaServicios(Data.archivoServicios);
+    public static ArrayList<Cliente> clientes=ProcesamientoData.crearListaClientes(archivoClientes);
 }
