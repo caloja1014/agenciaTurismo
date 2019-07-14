@@ -12,7 +12,11 @@ import java.util.ArrayList;
  * @author Cloja
  */
 public class Principal {
-
+/**
+ * Metodo en donde se llama al programa
+ * @param args
+ * @throws ParseException 
+ */
     public static void main(String[] args) throws ParseException{
         Agencia agen=new Agencia();
     }

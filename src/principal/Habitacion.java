@@ -69,7 +69,10 @@ public class Habitacion {
     public double getTarifaTriple() {
         return tarifaTriple;
     }
-    
+    /**
+     * Sobre escritura del metodo toString
+     * @return 
+     */
     public String toString() {
         ArrayList<Boolean> tarifasHotel=new ArrayList<>();
         String cadena="";

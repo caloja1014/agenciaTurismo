@@ -24,27 +24,61 @@ public class Coorporativo extends Cliente{
         this.nombreGerente=nombreGerente;
     }   
 
+    /**
+     * @return the informacionContacto
+     */
     public String getInformacionContacto() {
         return informacionContacto;
     }
 
-    public String getCargo() {
-        return cargo;
-    }
-
-    public String getNombreGerente() {
-        return nombreGerente;
-    }
-
+    /**
+     * @param informacionContacto the informacionContacto to set
+     */
     public void setInformacionContacto(String informacionContacto) {
         this.informacionContacto = informacionContacto;
     }
 
+    /**
+     * @return the cargo
+     */
+    public String getCargo() {
+        return cargo;
+    }
+
+    /**
+     * @param cargo the cargo to set
+     */
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
 
+    /**
+     * @return the nombreGerente
+     */
+    public String getNombreGerente() {
+        return nombreGerente;
+    }
+
+    /**
+     * @param nombreGerente the nombreGerente to set
+     */
     public void setNombreGerente(String nombreGerente) {
         this.nombreGerente = nombreGerente;
     }
+
+    /**
+     * @return the empleados
+     */
+    public ArrayList<String> getEmpleados() {
+        return empleados;
+    }
+
+    /**
+     * @param empleados the empleados to set
+     */
+    public void setEmpleados(ArrayList<String> empleados) {
+        this.empleados = empleados;
+    }
+
+   
 }

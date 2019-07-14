@@ -19,7 +19,11 @@ import principal.*;
  * @author Cloja
  */
 public class ProcesamientoData {
-    
+    /**
+     * Metodo encrgado de leer archivos
+     * @param direccion
+     * @return 
+     */
     public static ArrayList<String> lecturaArchivo(String direccion) {
         ArrayList<String> listaElementos= new ArrayList ();
         File archivo = new File(direccion);
@@ -38,7 +42,11 @@ public class ProcesamientoData {
         return listaElementos;
     }
     
-    
+    /**
+     * Metodo que crea la lista de catalogos del archivo catalogos
+     * @param lista
+     * @return 
+     */
     public static  ArrayList<Catalogo> crearListaCatalogos(ArrayList<String> lista ){
         ArrayList<Catalogo> listaObjeto=new ArrayList();
         try{
@@ -52,7 +60,11 @@ public class ProcesamientoData {
         return listaObjeto;
     }
     
-        
+    /**
+     * Metodo que crea la lista de ciudades del archivo ciudades
+     * @param lista
+     * @return 
+     */
     public static ArrayList<Ciudad> crearListaCiudades(ArrayList<String> lista ){
         ArrayList<Ciudad> listaObjeto=new ArrayList();
         try{
@@ -65,7 +77,11 @@ public class ProcesamientoData {
                return listaObjeto;
     }
 
-    
+    /**
+     * Metodo que crea la lista de habitaciones del archivo habitaciones
+     * @param lista
+     * @return 
+     */
     public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lista ){
         ArrayList<Habitacion> listaObjeto=new ArrayList();        
         try{
@@ -77,7 +93,11 @@ public class ProcesamientoData {
             return listaObjeto;
     }
 
-    
+    /**
+     * Metodo que crea la lista de hoteles del archivo hoteles
+     * @param lista
+     * @return 
+     */
     public static ArrayList<Hotel> crearListaHoteles(ArrayList<String> lista ){
         ArrayList<Hotel> listaObjeto=new ArrayList();
         try{
@@ -90,7 +110,11 @@ public class ProcesamientoData {
 
     }
 
-    
+    /**
+     * Metodo que crea la lista de provincias del archivo provincias
+     * @param lista
+     * @return 
+     */
     public static ArrayList<Provincia> crearListaProvincias(ArrayList<String> lista ){
         ArrayList<Provincia> listaObjeto=new ArrayList();
         try{
@@ -101,7 +125,11 @@ public class ProcesamientoData {
         }catch(NullPointerException  ex){}
                 return listaObjeto;
     }
-    
+    /**
+     * Metodo que crea la lista de servicios del archivo servicios
+     * @param lista
+     * @return 
+     */
     
     public static ArrayList<Servicio> crearListaServicios(ArrayList<String> lista ){
         ArrayList<Servicio> listaObjeto=new ArrayList();
@@ -113,7 +141,11 @@ public class ProcesamientoData {
         }catch (NullPointerException  ex){}
         return listaObjeto;
     }
-    
+    /**
+     * Metodo encargado de crear el archivo de clientes y ademas agregarlos
+     * @param cliente
+     * @throws IOException 
+     */
     
     public static void escribirArchivoClientesRegistrados(Cliente cliente) throws IOException{
         String ruta = "src/Archivos/clientes.csv";
@@ -131,7 +163,11 @@ public class ProcesamientoData {
         }
         bw.close();
     }
-    
+    /**
+     * Metodo encargado de crear la lista clientes del archivo de clientes
+     * @param lista
+     * @return 
+     */
     
     public static ArrayList<Cliente> crearListaClientes(ArrayList<String> lista ){
         ArrayList<Cliente> listaObjeto=new ArrayList();

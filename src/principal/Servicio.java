@@ -22,38 +22,62 @@ public class Servicio {
         this.idServicio = idServicio;
         this.estado = estado;
     }
-    
-    //setters
-    public void setSecuenia(String secuenia) {
-        this.secuenia = secuenia;
-    }
 
-    public void setIdHotel(String idHotel) {
-        this.idHotel = idHotel;
-    }
-
-    public void setIdServicio(String idServicio) {
-        this.idServicio = idServicio;
-    }
-
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
-    }
-    
-    //getters
+    /**
+     * @return the secuenia
+     */
     public String getSecuenia() {
         return secuenia;
     }
 
+    /**
+     * @param secuenia the secuenia to set
+     */
+    public void setSecuenia(String secuenia) {
+        this.secuenia = secuenia;
+    }
+
+    /**
+     * @return the idHotel
+     */
     public String getIdHotel() {
         return idHotel;
     }
 
+    /**
+     * @param idHotel the idHotel to set
+     */
+    public void setIdHotel(String idHotel) {
+        this.idHotel = idHotel;
+    }
+
+    /**
+     * @return the idServicio
+     */
     public String getIdServicio() {
         return idServicio;
     }
 
+    /**
+     * @param idServicio the idServicio to set
+     */
+    public void setIdServicio(String idServicio) {
+        this.idServicio = idServicio;
+    }
+
+    /**
+     * @return the estado
+     */
     public Boolean getEstado() {
         return estado;
     }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+    
+
 }

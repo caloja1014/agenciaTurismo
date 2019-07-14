@@ -58,7 +58,11 @@ public class Provincia {
     public String getWebProv() {
         return webProv;
     }
-    
+    /**
+     * Sobre escritura del metodo toString
+     * @return 
+     */
+    @Override
     public String toString() {
         return "Provincia{" + "nombre=" + nombre + ", descripcionProvincia=" + descripcionProvincia + ", region=" + region + ", webProv=" + webProv + '}';
     }

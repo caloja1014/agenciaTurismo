@@ -27,52 +27,89 @@ public class Cliente {
         this.numerosContacto = numerosContacto;
         this.numeroTarjeta = numeroTarjeta;
     }
-    
+
+    /**
+     * @return the identificacion
+     */
     public String getIdentificacion() {
         return identificacion;
     }
 
-    public String getCiudadResi() {
-        return ciudadResi;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getNumerosContacto() {
-        return numerosContacto;
-    }
-
-    public String getNumeroTarjeta() {
-        return numeroTarjeta;
-    }
-
+    /**
+     * @param identificacion the identificacion to set
+     */
     public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
     }
 
+    /**
+     * @return the ciudadResi
+     */
+    public String getCiudadResi() {
+        return ciudadResi;
+    }
+
+    /**
+     * @param ciudadResi the ciudadResi to set
+     */
     public void setCiudadResi(String ciudadResi) {
         this.ciudadResi = ciudadResi;
     }
 
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * @return the numerosContacto
+     */
+    public String getNumerosContacto() {
+        return numerosContacto;
+    }
+
+    /**
+     * @param numerosContacto the numerosContacto to set
+     */
     public void setNumerosContacto(String numerosContacto) {
         this.numerosContacto = numerosContacto;
     }
 
+    /**
+     * @return the numeroTarjeta
+     */
+    public String getNumeroTarjeta() {
+        return numeroTarjeta;
+    }
+
+    /**
+     * @param numeroTarjeta the numeroTarjeta to set
+     */
     public void setNumeroTarjeta(String numeroTarjeta) {
         this.numeroTarjeta = numeroTarjeta;
     }
+    
 }

@@ -42,104 +42,7 @@ public class Hotel {
         this.longitud = longitud;
     }
     
-        //getters
-    public String getIdHotel() {
-        return idHotel;
-    }
 
-    public String getIdCiudad() {
-        return idCiudad;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getDescipcionHotel() {
-        return descipcionHotel;
-    }
-
-    public String getTargetaHotel() {
-        return targetaHotel;
-    }
-
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public String getWebHotel() {
-        return webHotel;
-    }
-
-    public String getClasificacion() {
-        return clasificacion;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public String getLatitud() {
-        return latitud;
-    }
-
-    public String getLongitud() {
-        return longitud;
-    }
-        
-    
-    //setters
-    public void setIdHotel(String idHotel) {
-        this.idHotel = idHotel;
-    }
-
-    public void setIdCiudad(String idCiudad) {
-        this.idCiudad = idCiudad;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setDescipcionHotel(String descipcionHotel) {
-        this.descipcionHotel = descipcionHotel;
-    }
-
-    public void setTargetaHotel(String targetaHotel) {
-        this.targetaHotel = targetaHotel;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public void setWebHotel(String webHotel) {
-        this.webHotel = webHotel;
-    }
-
-    public void setClasificacion(String clasificacion) {
-        this.clasificacion = clasificacion;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-    public void setLatitud(String latitud) {
-        this.latitud = latitud;
-    }
-
-    public void setLongitud(String longitud) {
-        this.longitud = longitud;
-    }
     
     /**
      * @return the servicios
@@ -150,5 +53,173 @@ public class Hotel {
     
     public String toString() {
         return "Hotel{" + "nombre=" + nombre + ", descipcionHotel=" + descipcionHotel + ", targetaHotel=" + targetaHotel + ", ubicacion=" + ubicacion + ", direccion=" + direccion + ", webHotel=" + webHotel + ", clasificacion=" + clasificacion + ", foto=" + foto + ", latitud=" + latitud + ", longitud=" + longitud + '}';
+    }
+
+    /**
+     * @return the idHotel
+     */
+    public String getIdHotel() {
+        return idHotel;
+    }
+
+    /**
+     * @param idHotel the idHotel to set
+     */
+    public void setIdHotel(String idHotel) {
+        this.idHotel = idHotel;
+    }
+
+    /**
+     * @return the idCiudad
+     */
+    public String getIdCiudad() {
+        return idCiudad;
+    }
+
+    /**
+     * @param idCiudad the idCiudad to set
+     */
+    public void setIdCiudad(String idCiudad) {
+        this.idCiudad = idCiudad;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * @return the descipcionHotel
+     */
+    public String getDescipcionHotel() {
+        return descipcionHotel;
+    }
+
+    /**
+     * @param descipcionHotel the descipcionHotel to set
+     */
+    public void setDescipcionHotel(String descipcionHotel) {
+        this.descipcionHotel = descipcionHotel;
+    }
+
+    /**
+     * @return the targetaHotel
+     */
+    public String getTargetaHotel() {
+        return targetaHotel;
+    }
+
+    /**
+     * @param targetaHotel the targetaHotel to set
+     */
+    public void setTargetaHotel(String targetaHotel) {
+        this.targetaHotel = targetaHotel;
+    }
+
+    /**
+     * @return the ubicacion
+     */
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    /**
+     * @param ubicacion the ubicacion to set
+     */
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    /**
+     * @return the direccion
+     */
+    public String getDireccion() {
+        return direccion;
+    }
+
+    /**
+     * @param direccion the direccion to set
+     */
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    /**
+     * @return the webHotel
+     */
+    public String getWebHotel() {
+        return webHotel;
+    }
+
+    /**
+     * @param webHotel the webHotel to set
+     */
+    public void setWebHotel(String webHotel) {
+        this.webHotel = webHotel;
+    }
+
+    /**
+     * @return the clasificacion
+     */
+    public String getClasificacion() {
+        return clasificacion;
+    }
+
+    /**
+     * @param clasificacion the clasificacion to set
+     */
+    public void setClasificacion(String clasificacion) {
+        this.clasificacion = clasificacion;
+    }
+
+    /**
+     * @return the foto
+     */
+    public String getFoto() {
+        return foto;
+    }
+
+    /**
+     * @param foto the foto to set
+     */
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    /**
+     * @return the latitud
+     */
+    public String getLatitud() {
+        return latitud;
+    }
+
+    /**
+     * @param latitud the latitud to set
+     */
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    /**
+     * @return the longitud
+     */
+    public String getLongitud() {
+        return longitud;
+    }
+
+    /**
+     * @param longitud the longitud to set
+     */
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
     }
 }

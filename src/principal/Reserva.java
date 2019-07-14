@@ -21,8 +21,8 @@ public class Reserva {
     private Cliente cliente;
     private int montoRecaudado;
     private int codigo;
-    static ArrayList<Integer> codigos=new ArrayList<>();
-    static Random random = new Random();
+    private static ArrayList<Integer> codigos=new ArrayList<>();
+    private static Random random = new Random();
     //constructor 
 
     public Reserva(String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente, int montoRecaudado) {
@@ -62,45 +62,118 @@ public class Reserva {
         }
         return true;
     }
-    
-    //getters
+
+    /**
+     * @return the fechaCheckIn
+     */
     public String getFechaCheckIn() {
         return fechaCheckIn;
     }
 
-    public String getFechaCheckOut() {
-        return fechaCheckOut;
-    }
-
-    public Hotel getHotel() {
-        return hotel;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public int getMontoRecaudado() {
-        return montoRecaudado;
-    }
-        public int getCodigo() {
-        return codigo;
-    }
-
-    //setters
+    /**
+     * @param fechaCheckIn the fechaCheckIn to set
+     */
     public void setFechaCheckIn(String fechaCheckIn) {
         this.fechaCheckIn = fechaCheckIn;
     }
 
+    /**
+     * @return the fechaCheckOut
+     */
+    public String getFechaCheckOut() {
+        return fechaCheckOut;
+    }
+
+    /**
+     * @param fechaCheckOut the fechaCheckOut to set
+     */
     public void setFechaCheckOut(String fechaCheckOut) {
         this.fechaCheckOut = fechaCheckOut;
     }
 
+    /**
+     * @return the hotel
+     */
+    public Hotel getHotel() {
+        return hotel;
+    }
+
+    /**
+     * @param hotel the hotel to set
+     */
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
     }
 
+    /**
+     * @return the cliente
+     */
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    /**
+     * @param cliente the cliente to set
+     */
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }    
+    }
+
+    /**
+     * @return the montoRecaudado
+     */
+    public int getMontoRecaudado() {
+        return montoRecaudado;
+    }
+
+    /**
+     * @param montoRecaudado the montoRecaudado to set
+     */
+    public void setMontoRecaudado(int montoRecaudado) {
+        this.montoRecaudado = montoRecaudado;
+    }
+
+    /**
+     * @return the codigo
+     */
+    public int getCodigo() {
+        return codigo;
+    }
+
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    /**
+     * @return the codigos
+     */
+    public static ArrayList<Integer> getCodigos() {
+        return codigos;
+    }
+
+    /**
+     * @param aCodigos the codigos to set
+     */
+    public static void setCodigos(ArrayList<Integer> aCodigos) {
+        codigos = aCodigos;
+    }
+
+    /**
+     * @return the random
+     */
+    public static Random getRandom() {
+        return random;
+    }
+
+    /**
+     * @param aRandom the random to set
+     */
+    public static void setRandom(Random aRandom) {
+        random = aRandom;
+    }
+    
+   
 }

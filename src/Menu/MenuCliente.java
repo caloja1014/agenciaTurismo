@@ -291,7 +291,13 @@ public class MenuCliente {
         clientes.add(client);
         return client;
     }
-    
+    /**
+     * Este metodo filtra la lista de habitaciones por ciudad
+     * @param ciudad
+     * @param habitaciones
+     * @param ciudades
+     * @return Retorna una lista de habitaciones filtrada por ciudades
+     */
     public ArrayList<Hotel> mostrarInformacion(String ciudad,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
         ArrayList<Habitacion> habitacionesEscogidas=new ArrayList();
         ArrayList<Hotel> hoteles= new ArrayList();
@@ -313,7 +319,14 @@ public class MenuCliente {
             return null;
         }
     }
-    
+    /**
+     * Este metodo filtra la lista de habitaciones por ciudad y servicio
+     * @param ciudad
+     * @param habitaciones
+     * @param ciudades
+     * @param servicio
+     * @return Retorna una lista de habitaciones filtrada por ciudades y servicio
+     */
     public ArrayList<Hotel> mostrarInformacion(String ciudad,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades,String servicio){
         ArrayList<Hotel>hotelesEscogidos=this.mostrarInformacion(ciudad, habitaciones,ciudades);
         ArrayList<Hotel>hotelesFinales=new ArrayList();
@@ -331,7 +344,14 @@ public class MenuCliente {
         } 
     }
     
-    
+    /**
+     * Este metodo filtra la lista de habitaciones por ciudad, servicio y precios
+     * @param ciudad
+     * @param rango
+     * @param habitaciones
+     * @param ciudades
+     * @return Retorna una lista de habitaciones filtrada por ciudades, servicio y un rango de precios
+     */
     public ArrayList<Hotel> mostrarInformacion(String ciudad,String rango,ArrayList<Habitacion> habitaciones,ArrayList<Ciudad> ciudades){
         String[] rangoPrecio=rango.split("a");
         Double rangoSuperior=Double.parseDouble(rangoPrecio[0].trim());
@@ -361,7 +381,15 @@ public class MenuCliente {
             return null;
         }
     }
-    
+    /**
+     * Este metodo filtra la lista de habitaciones por ciudad y precios
+     * @param ciudad
+     * @param rango
+     * @param habitaciones
+     * @param servicio
+     * @param ciudades
+     * @return Retorna una lista de habitaciones filtrada por ciudades y un rango de precios
+     */
     public ArrayList<Hotel> mostrarInformacion(String ciudad,String rango,ArrayList<Habitacion> habitaciones,String servicio,ArrayList<Ciudad> ciudades){
         ArrayList<Hotel>hotelesEscogidos=this.mostrarInformacion(ciudad,rango, habitaciones,ciudades);
         ArrayList<Hotel>hotelesFinales=new ArrayList();
@@ -416,7 +444,10 @@ public class MenuCliente {
             realizarReserva(ciudad);
         }
     }
-
+/**
+ * Imprime los hoteles de una determinada lista de hoteles
+ * @param hoteles 
+ */
     public void mostrarHoteles(ArrayList<Hotel> hoteles){
         int num=0;
         try{

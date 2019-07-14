@@ -17,11 +17,19 @@ public class ReservaTurista extends Reserva{
         this.habitacion = habitacion;
     }
 
+    /**
+     * @return the habitacion
+     */
     public Habitacion getHabitacion() {
         return habitacion;
     }
 
+    /**
+     * @param habitacion the habitacion to set
+     */
     public void setHabitacion(Habitacion habitacion) {
         this.habitacion = habitacion;
     }
+
+
 }
