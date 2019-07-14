@@ -22,7 +22,7 @@ public class ProcesamientoData {
     /**
      * Metodo encrgado de leer archivos
      * @param direccion
-     * @return 
+     * @return Retorna una lista con las lineas de cada archivo que se le envia
      */
     public static ArrayList<String> lecturaArchivo(String direccion) {
         ArrayList<String> listaElementos= new ArrayList ();
@@ -45,7 +45,7 @@ public class ProcesamientoData {
     /**
      * Metodo que crea la lista de catalogos del archivo catalogos
      * @param lista
-     * @return 
+     * @return  Retorna lista de catalogos
      */
     public static  ArrayList<Catalogo> crearListaCatalogos(ArrayList<String> lista ){
         ArrayList<Catalogo> listaObjeto=new ArrayList();
@@ -63,7 +63,7 @@ public class ProcesamientoData {
     /**
      * Metodo que crea la lista de ciudades del archivo ciudades
      * @param lista
-     * @return 
+     * @return  Retorna lista de ciudades
      */
     public static ArrayList<Ciudad> crearListaCiudades(ArrayList<String> lista ){
         ArrayList<Ciudad> listaObjeto=new ArrayList();
@@ -80,7 +80,7 @@ public class ProcesamientoData {
     /**
      * Metodo que crea la lista de habitaciones del archivo habitaciones
      * @param lista
-     * @return 
+     * @return  Retorna lista de habitaciones
      */
     public static ArrayList<Habitacion> crearListaHabitaciones(ArrayList<String> lista ){
         ArrayList<Habitacion> listaObjeto=new ArrayList();        
@@ -96,7 +96,7 @@ public class ProcesamientoData {
     /**
      * Metodo que crea la lista de hoteles del archivo hoteles
      * @param lista
-     * @return 
+     * @return  Retorna lista de Hoteles
      */
     public static ArrayList<Hotel> crearListaHoteles(ArrayList<String> lista ){
         ArrayList<Hotel> listaObjeto=new ArrayList();
@@ -113,7 +113,7 @@ public class ProcesamientoData {
     /**
      * Metodo que crea la lista de provincias del archivo provincias
      * @param lista
-     * @return 
+     * @return  Retorna lista de provincias
      */
     public static ArrayList<Provincia> crearListaProvincias(ArrayList<String> lista ){
         ArrayList<Provincia> listaObjeto=new ArrayList();
@@ -128,7 +128,7 @@ public class ProcesamientoData {
     /**
      * Metodo que crea la lista de servicios del archivo servicios
      * @param lista
-     * @return 
+     * @return Retorna lista de servicios
      */
     
     public static ArrayList<Servicio> crearListaServicios(ArrayList<String> lista ){
@@ -166,7 +166,7 @@ public class ProcesamientoData {
     /**
      * Metodo encargado de crear la lista clientes del archivo de clientes
      * @param lista
-     * @return 
+     * @return retorna lista de clientes
      */
     
     public static ArrayList<Cliente> crearListaClientes(ArrayList<String> lista ){
