@@ -179,4 +179,52 @@ public class ProcesamientoData {
         }catch (NullPointerException  ex){}
         return listaObjeto;
     }
+    
+    public static void escribirArchivoReservas(Reserva reserva) throws IOException {
+
+        String ruta = "src/Archivos/reservas.csv";
+        File archivo = new File(ruta);
+        BufferedWriter bw;
+        
+        String cadena=reserva.getCodigo()+"|"+reserva.getFechaCheckIn()+"|"+reserva.getFechaCheckOut()+"|"+reserva.getMontoRecaudado() +"|"+reserva.getHotel().getIdHotel()+"|"+reserva.getCliente().getIdentificacion();
+        if(archivo.exists()) {
+            bw = new BufferedWriter(new FileWriter(archivo,true));
+            bw.write(cadena+"\n");
+        } else {
+            bw = new BufferedWriter(new FileWriter(archivo,true));
+            bw.write("codigoReserva|checkIn|checkOut|montoRecaudado|idHotel|idCliente\n");
+            bw.write(cadena+"\n");
+        }
+        bw.close();
+    }
+    
+    public static ArrayList<Reserva> crearListaReservas(ArrayList<String> lista ){
+        ArrayList<Reserva> listaObjeto=new ArrayList();
+        
+        for (String reserva:lista){
+            String[] re=reserva.split("\\|");
+            Hotel h=null;
+            Cliente c=null;
+            String cI=re[1];
+            String cO=re[2];
+            String monto=re[3];
+            int indice=0;
+            for (Hotel hotel :data.Data.hoteles){
+                if (hotel.getIdHotel().equals(re[4])){
+                    h=hotel;
+                }
+            for (Cliente cliente:data.Data.clientes){
+                if (cliente.getIdentificacion().equals(re[0])){
+                    c=cliente;
+                }
+            
+            }
+            }
+            listaObjeto.add(new Reserva(cI, cO, h,c,Double.parseDouble(monto)));
+
+            }
+        return listaObjeto;
+    }
+    
+    
 }

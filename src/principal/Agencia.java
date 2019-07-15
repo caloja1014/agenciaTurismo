@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import data.Data;
+import java.io.IOException;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,7 +28,7 @@ public class Agencia {
      *Se crea el constructor de la clase que llama al metodo que presenta el menu  
      * @throws ParseException Se declara la excepcion que ocurre en el metodo que esta llamando
      */
-    public Agencia() throws ParseException {
+    public Agencia() throws ParseException, IOException {
         presentarMenu();
     }
         
@@ -35,7 +36,7 @@ public class Agencia {
      * este metodo presenta el menu que los separa en cliente y agencia
      * @throws ParseException Se declara la excepcion que puede llegar a suceder
      */
-    public void presentarMenu() throws ParseException{     
+    public void presentarMenu() throws ParseException, IOException{     
         System.out.println("Buenas dias, que cargo tiene usted?(Cliente o agencia)");
         String ocupacion=sc.nextLine();
         boolean client=Pattern.matches(".*CLIENTE.*", ocupacion.toUpperCase());

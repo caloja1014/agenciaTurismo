@@ -19,13 +19,13 @@ public class Reserva {
     private String fechaCheckOut;
     private Hotel hotel;
     private Cliente cliente;
-    private int montoRecaudado;
+    private double montoRecaudado;
     private int codigo;
     private static ArrayList<Integer> codigos=new ArrayList<>();
     private static Random random = new Random();
     //constructor 
 
-    public Reserva(String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente, int montoRecaudado) {
+    public Reserva(String fechaCheckIn, String fechaCheckOut, Hotel hotel, Cliente cliente, double montoRecaudado) {
         this.fechaCheckIn = fechaCheckIn;
         this.fechaCheckOut = fechaCheckOut;
         this.hotel = hotel;
@@ -35,7 +35,10 @@ public class Reserva {
     }
 
     public Reserva() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
     
     
     //metodo
@@ -122,14 +125,14 @@ public class Reserva {
     /**
      * @return the montoRecaudado
      */
-    public int getMontoRecaudado() {
+    public double getMontoRecaudado() {
         return montoRecaudado;
     }
 
     /**
      * @param montoRecaudado the montoRecaudado to set
      */
-    public void setMontoRecaudado(int montoRecaudado) {
+    public void setMontoRecaudado(double montoRecaudado) {
         this.montoRecaudado = montoRecaudado;
     }
 

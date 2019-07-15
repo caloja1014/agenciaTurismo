@@ -29,6 +29,7 @@ public class Data {
     public static ArrayList<String> archivoServicios=ProcesamientoData.lecturaArchivo("src/Archivos/servicios.csv");
     public static ArrayList<String> archivoClientes=ProcesamientoData.lecturaArchivo("src/Archivos/clientes.csv");
     
+    
     public static ArrayList<Provincia> provincias=ProcesamientoData.crearListaProvincias(Data.archivoProvincias);
     public static ArrayList<Ciudad> ciudades=ProcesamientoData.crearListaCiudades(Data.archivoCiudades);
     public static ArrayList<Hotel> hoteles=ProcesamientoData.crearListaHoteles(Data.archivoHoteles);
