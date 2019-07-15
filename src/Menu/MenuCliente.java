@@ -21,6 +21,8 @@ import principal.Habitacion;
 import principal.Hotel;
 import principal.Reserva;
 import data.Data;
+import data.ProcesamientoData;
+import java.io.IOException;
 
 /**
  *
@@ -36,14 +38,14 @@ public class MenuCliente {
     /**
      * Se crea el constructor de la clase que presentara el menu para el cliente
      */
-    public MenuCliente(){
+    public MenuCliente() throws IOException{
         presentarInterfazCliente();
     }
     
     /**
      * Se crea el metodo presentar interfaz cliente que se refiere al bot de asistencia para el usuario
      */
-    public void presentarInterfazCliente(){
+    public void presentarInterfazCliente() throws IOException{
         listaValsino.add("si");
         listaValsino.add("no");
         System.out.println("Hola! Soy Buzz tu agente asignado! En que puedo ayudarte?");
@@ -137,7 +139,7 @@ public class MenuCliente {
      * 
      * @param usuario1 Se crea el metodo realizar reserva que muestra opciones segun lo especificado para diferentes casos
      */
-    public void realizarReserva(String usuario1){
+    public void realizarReserva(String usuario1) throws IOException{
         Ciudad c1=validarPorCiudad(usuario1);
         if(c1!=null){
             reservaPorCiudad(c1);
@@ -168,7 +170,7 @@ public class MenuCliente {
      * 
      * @param c1 Se crea el metodo reservarPorCiudad que procede a solicitar especificaciones de hoteles, ingresado previamente la ciudad de alojamiento
      */
-    public void reservaPorCiudad(Ciudad c1){
+    public void reservaPorCiudad(Ciudad c1) throws IOException{
         ArrayList<Hotel> hotelesOp;
         System.out.println("Desea solicitar un rango de precio?");
         String respu=sc.nextLine();
@@ -238,7 +240,7 @@ public class MenuCliente {
      * 
      * @param nombre Se crea el metodo registrarReserva que procede a solicitar los datos del tiempo de reserva luego de haber seleccionado el hotel
      */
-    public void registrarReserva(String nombre){
+    public void registrarReserva(String nombre) throws IOException{
         Hotel hotel=null;
         Cliente cli=null;
         System.out.println("Ha realizado alguna reservacion en otra ocasión?");
@@ -268,6 +270,7 @@ public class MenuCliente {
         System.out.println("Cuanto dejara de abonado?");
         int monto=sc.nextInt();
         sc.nextLine();
+        
         reservas.add(new Reserva(fechCkeIn, fechCkeIn, hotel,cli,monto));
     }
     
@@ -275,7 +278,7 @@ public class MenuCliente {
      * 
      * @return Metodo registrarCliente que pide la informacion del cliente para poder realizar la reservacion
      */
-    public Cliente registrarCliente(){
+    public Cliente registrarCliente() throws IOException{
         System.out.println("Indiqueme su identificacion");
         String identificacion=sc.nextLine();
         System.out.println("Indiqueme su ciudad de residencia");
@@ -298,11 +301,14 @@ public class MenuCliente {
             System.out.println("Indiqueme el nombre del gerente");
             String nombreGerente=sc.nextLine();
             Cliente client=new Coorporativo(identificacion, ciudadResi,nombre, email, celular, numeroTarjeta, infoContacto, cargo, nombreGerente);
-            clientes.add(client);
+            ProcesamientoData.escribirArchivoClientesRegistrados(client);
+            //clientes.add(client);
             return client;
         }
         Cliente client=new Cliente(identificacion, ciudadResi,nombre, email, celular, numeroTarjeta);
-        clientes.add(client);
+        ProcesamientoData.escribirArchivoClientesRegistrados(client);
+
+//clientes.add(client);
         return client;
     }
     /**
@@ -449,7 +455,7 @@ public class MenuCliente {
     /**
      * metodorealizarNada le recalca la opcion de reservar en el caso de que no se entienda lo que desea el cliente
      */
-    public void realizarNada(){
+    public void realizarNada() throws IOException{
     System.out.println("No entiendo, desea reservar un hotel? ");
     String reserva=sc.nextLine();
         if (reserva.equalsIgnoreCase("si")){
