@@ -82,7 +82,7 @@ public class Habitacion {
         for (Boolean b :tarifasHotel){
             int indice=0;
             if (b){
-                cadena+=tarifas.get(indice);
+                cadena+=this.nombre+" "+ tarifas.get(indice);
             }
             indice++;
         }

@@ -20,6 +20,7 @@ import principal.Coorporativo;
 import principal.Habitacion;
 import principal.Hotel;
 import principal.Reserva;
+import data.Data;
 
 /**
  *
@@ -187,13 +188,20 @@ public class MenuCliente {
                 hotelesOp=mostrarInformacion(c1.getNombre(), rango, Data.habitaciones, servicio, Data.ciudades);
                 this.mostrarHoteles(hotelesOp);
                 System.out.println("Indiqueme el nombre del hotel que desea reservar");
+                
                 String nombre=sc.nextLine();
+                Hotel hotel=hotelesOp.get(Integer.parseInt(nombre)-1);
+                System.out.println(hotelesOp.get(Integer.parseInt(nombre)-1));
+                MenuCliente.mostrarHabitaciones(hotel, Data.habitaciones);
                 registrarReserva(nombre);
             }
             else{
                 this.mostrarHoteles(hotelesOp);
                 System.out.println("Indiqueme el nombre del hotel que desea reservar");
                 String nombre=sc.nextLine();
+                Hotel hotel=hotelesOp.get(Integer.parseInt(nombre)-1);
+                System.out.println(hotelesOp.get(Integer.parseInt(nombre)-1));
+                MenuCliente.mostrarHabitaciones(hotel, Data.habitaciones);
                 registrarReserva(nombre);
             }
         }
@@ -209,12 +217,18 @@ public class MenuCliente {
                 this.mostrarHoteles(hotelesOp);
                 System.out.println("Indiqueme el nombre del hotel que desea reservar");
                 String nombre=sc.nextLine();
+                Hotel hotel=hotelesOp.get(Integer.parseInt(nombre)-1);
+                System.out.println(hotelesOp.get(Integer.parseInt(nombre)-1));
+                MenuCliente.mostrarHabitaciones(hotel, Data.habitaciones);
                 registrarReserva(nombre);
             }
             else{
                 this.mostrarHoteles(hotelesOp);
                 System.out.println("Indiqueme el nombre del hotel que desea reservar");
                 String nombre=sc.nextLine();
+                Hotel hotel=hotelesOp.get(Integer.parseInt(nombre)-1);
+                System.out.println(hotelesOp.get(Integer.parseInt(nombre)-1));
+                MenuCliente.mostrarHabitaciones(hotel, Data.habitaciones);
                 registrarReserva(nombre);
             }
         }
@@ -464,4 +478,15 @@ public class MenuCliente {
             System.out.println(n);
         }
     }
+    public static void mostrarHabitaciones(Hotel hotel,ArrayList<Habitacion> habitaciones){
+        String idHotel= hotel.getIdHotel();
+        habitaciones.forEach((h) -> {
+            String hotelHab=h.getIdHotel();
+            if (idHotel.equals(hotelHab)) {
+                System.out.println(h);
+            }
+        });
+    
+    }
+    
 }
