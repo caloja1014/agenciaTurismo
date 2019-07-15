@@ -74,18 +74,10 @@ public class Habitacion {
      * @return 
      */
     public String toString() {
-        ArrayList<Boolean> tarifasHotel=new ArrayList<>();
-        String cadena="";
-        tarifasHotel.add(this.tarifaSencilla>0.0);tarifasHotel.add(this.tarifaDoble>0.0);tarifasHotel.add(this.tarifaTriple>0.0);
-        ArrayList<String> tarifas= new ArrayList<>();
-        tarifas.add("Tarifa sencilla: "+"$"+this.tarifaSencilla+"c/noche, ");tarifas.add("Tarifa Doble: "+"$"+this.tarifaDoble+"c/noche, " );tarifas.add("Tarifa Triple: "+"$"+this.tarifaTriple+"c/noche ");
-        for (Boolean b :tarifasHotel){
-            int indice=0;
-            if (b){
-                cadena+=this.nombre+" "+ tarifas.get(indice);
-            }
-            indice++;
-        }
+       
+        String cadena=this.nombre+": Tarifa sencilla "+this.tarifaSencilla+", Tarifa doble "+this.tarifaDoble+", Tarifa triple "+this.tarifaTriple;
+        
+        
         return cadena;
     }
 }
